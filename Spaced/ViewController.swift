@@ -8,18 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBarController?.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+/*
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("™")
+        performSegue(withIdentifier: "categorySegue", sender: self)
     }
-
-
+  */
+    @IBAction func gotoTasks(_ sender: UIButton) {
+        //performSegue(withIdentifier: "taskSegue", sender: self)
+        //print("😎")
+        self.tabBarController?.selectedIndex = 2
+    }
+    
 }
 
