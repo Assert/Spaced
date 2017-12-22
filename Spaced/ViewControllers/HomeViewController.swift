@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Spaced
 //
 //  Created by Eystein Bye on 22/12/2017.
