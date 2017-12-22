@@ -91,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		458598971FEDC43500C26A95 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
+				458598951FEDB07B00C26A95 /* TaskViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		45C4D3BC1FED9F5C00ED9BA8 = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +125,12 @@
 		45C4D3C71FED9F5D00ED9BA8 /* Spaced */ = {
 			isa = PBXGroup;
 			children = (
-				45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */,
-				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
-				45C4D3CC1FED9F5D00ED9BA8 /* Main.storyboard */,
 				45C4D3CF1FED9F5D00ED9BA8 /* Assets.xcassets */,
+				458598971FEDC43500C26A95 /* ViewControllers */,
+				45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */,
+				45C4D3CC1FED9F5D00ED9BA8 /* Main.storyboard */,
 				45C4D3D11FED9F5D00ED9BA8 /* LaunchScreen.storyboard */,
 				45C4D3D41FED9F5D00ED9BA8 /* Info.plist */,
-				458598951FEDB07B00C26A95 /* TaskViewController.swift */,
 			);
 			path = Spaced;
 			sourceTree = "<group>";
