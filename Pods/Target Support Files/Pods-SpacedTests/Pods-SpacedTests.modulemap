@@ -1,0 +1,6 @@
+framework module Pods_SpacedTests {
+  umbrella header "Pods-SpacedTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
