@@ -53,13 +53,6 @@
                                     <tabBarItem title="Settings" id="mGJ-7d-bxx"/>
                                 </items>
                             </tabBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoz-fl-ykA">
-                                <rect key="frame" x="1" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Spaced" id="aB4-I9-hNI"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-Ln-zNp">
                                 <rect key="frame" x="155" y="520" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,6 +61,13 @@
                                     <action selector="gotoTasks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhu-ww-CFc"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0p-ob-dtB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Memorize" id="6AH-j9-ye5"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2487" y="367"/>
+            <point key="canvasLocation" x="-2548" y="367"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="8SE-vp-SwN">
@@ -101,6 +101,13 @@
                                     <action selector="gotoNewTask:" destination="nnO-c1-QZ0" eventType="touchUpInside" id="2Z4-c1-SUb"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-Pd-80b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Tasks" id="iHT-lR-wLt"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RuE-E7-wa0"/>
@@ -112,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2D-pF-m32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1710" y="367"/>
+            <point key="canvasLocation" x="-951" y="367"/>
         </scene>
         <!--New Task View Controller-->
         <scene sceneID="ah8-xR-3H2">
@@ -122,43 +129,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-1b-yIs">
-                                <rect key="frame" x="139" y="166" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-1b-yIs">
+                                <rect key="frame" x="139" y="171" width="216" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNX-vC-VyB">
-                                <rect key="frame" x="140" y="232" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNX-vC-VyB">
+                                <rect key="frame" x="139" y="224" width="216" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-2M-0RE">
-                                <rect key="frame" x="172" y="318" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveNewTask:" destination="kqh-sm-tH2" eventType="touchUpInside" id="DaY-eo-XvC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-Q1-s6n">
-                                <rect key="frame" x="152" y="121" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-Q1-s6n">
+                                <rect key="frame" x="20" y="171" width="69" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-fC-utb">
+                                <rect key="frame" x="1" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Create new task" id="hUp-hA-eVw"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-Ua-C6U">
+                                <rect key="frame" x="20" y="224" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-2M-0RE">
+                                <rect key="frame" x="154" y="283" width="66" height="30"/>
+                                <state key="normal" title="Save task"/>
+                                <connections>
+                                    <action selector="saveNewTask:" destination="kqh-sm-tH2" eventType="touchUpInside" id="DaY-eo-XvC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Afc-qI-HKe" firstAttribute="trailing" secondItem="0pZ-1b-yIs" secondAttribute="trailing" constant="20" id="2hR-MZ-jJc"/>
+                            <constraint firstItem="uNX-vC-VyB" firstAttribute="leading" secondItem="0pZ-1b-yIs" secondAttribute="leading" id="K6L-lU-8q5"/>
+                            <constraint firstItem="fIf-Ua-C6U" firstAttribute="top" secondItem="YPb-Q1-s6n" secondAttribute="bottom" constant="32" id="PFw-6t-4cf"/>
+                            <constraint firstItem="Afc-qI-HKe" firstAttribute="trailing" secondItem="uNX-vC-VyB" secondAttribute="trailing" constant="20" id="Tgs-s4-RRd"/>
+                            <constraint firstItem="YPb-Q1-s6n" firstAttribute="top" secondItem="oAG-fC-utb" secondAttribute="bottom" constant="127" id="YC5-4A-zlt"/>
+                            <constraint firstItem="Z3d-2M-0RE" firstAttribute="centerX" secondItem="SPe-Yr-uND" secondAttribute="centerX" id="aHa-99-ASB"/>
+                            <constraint firstItem="0pZ-1b-yIs" firstAttribute="leading" secondItem="YPb-Q1-s6n" secondAttribute="trailing" constant="50" id="bXt-u3-RIG"/>
+                            <constraint firstItem="uNX-vC-VyB" firstAttribute="top" secondItem="0pZ-1b-yIs" secondAttribute="bottom" constant="23" id="gwe-NL-jtC"/>
+                            <constraint firstItem="fIf-Ua-C6U" firstAttribute="leading" secondItem="Afc-qI-HKe" secondAttribute="leading" constant="20" id="i78-eY-ysI"/>
+                            <constraint firstItem="YPb-Q1-s6n" firstAttribute="leading" secondItem="Afc-qI-HKe" secondAttribute="leading" constant="20" id="t6G-iW-o7d"/>
+                            <constraint firstItem="Z3d-2M-0RE" firstAttribute="top" secondItem="uNX-vC-VyB" secondAttribute="bottom" constant="20" id="wWA-HD-dri"/>
+                            <constraint firstItem="0pZ-1b-yIs" firstAttribute="top" secondItem="oAG-fC-utb" secondAttribute="bottom" constant="127" id="wbk-ED-UZi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Afc-qI-HKe"/>
                     </view>
+                    <connections>
+                        <outlet property="answer" destination="uNX-vC-VyB" id="4kq-3O-kvx"/>
+                        <outlet property="question" destination="0pZ-1b-yIs" id="A65-5h-N3U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-dK-Fgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1711" y="1163"/>
+            <point key="canvasLocation" x="-169" y="367"/>
         </scene>
         <!--Categories-->
         <scene sceneID="T81-x3-R2p">
@@ -175,6 +208,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BB-8g-6DC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Categories" id="Rog-Hr-p4p"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Jd-je-G3m"/>
@@ -183,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTL-q5-kD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951" y="367"/>
+            <point key="canvasLocation" x="-1759" y="367"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h98-xu-86r">
@@ -220,6 +260,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kn3-mu-f4v">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Setings" id="NE4-0v-LJ7"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Fyp-Hv-9Np"/>

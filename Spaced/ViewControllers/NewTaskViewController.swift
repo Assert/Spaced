@@ -11,6 +11,9 @@ import Firebase
 
 class NewTaskViewController: UIViewController {
 
+    @IBOutlet var question: UITextField!
+    @IBOutlet var answer: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,7 @@ class NewTaskViewController: UIViewController {
     }
     @IBAction func saveNewTask(_ sender: UIButton) {
         writeTask()
+        dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,8 +35,8 @@ class NewTaskViewController: UIViewController {
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db.collection("tasks").addDocument(data: [
-            "title": "Napolion",
-            "description": "When did Napolion.....?",
+            "question": question.text as Any,
+            "answer": answer.text as Any,
             "isPublic": false
         ]) { err in
             if let err = err {
