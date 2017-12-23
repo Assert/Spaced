@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="-1710" y="367"/>
         </scene>
-        <!--View Controller-->
+        <!--New Task View Controller-->
         <scene sceneID="ah8-xR-3H2">
             <objects>
-                <viewController id="kqh-sm-tH2" sceneMemberID="viewController">
+                <viewController id="kqh-sm-tH2" customClass="NewTaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SPe-Yr-uND">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,6 +140,9 @@
                                 <rect key="frame" x="172" y="318" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveNewTask:" destination="kqh-sm-tH2" eventType="touchUpInside" id="DaY-eo-XvC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-Q1-s6n">
                                 <rect key="frame" x="152" y="121" width="71" height="21"/>

@@ -17,6 +17,7 @@
 		45C4D3DE1FED9F5D00ED9BA8 /* SpacedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3DD1FED9F5D00ED9BA8 /* SpacedTests.swift */; };
 		45C4D3E91FED9F5D00ED9BA8 /* SpacedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3E81FED9F5D00ED9BA8 /* SpacedUITests.swift */; };
 		45F63ABF1FEE7B1300AB1ECB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45F63ABE1FEE7B1300AB1ECB /* GoogleService-Info.plist */; };
+		45F63AC11FEEB5C900AB1ECB /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F63AC01FEEB5C900AB1ECB /* NewTaskViewController.swift */; };
 		7DEA850E657EF9E90FABBF8F /* Pods_SpacedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE1CFFCB465D0FF029C63DB /* Pods_SpacedTests.framework */; };
 		C7C01ECA4656AC9D8591277D /* Pods_SpacedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E0DF39E1279A1A06F3D5B4 /* Pods_SpacedUITests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		45C4D3E81FED9F5D00ED9BA8 /* SpacedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacedUITests.swift; sourceTree = "<group>"; };
 		45C4D3EA1FED9F5D00ED9BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45F63ABE1FEE7B1300AB1ECB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45F63AC01FEEB5C900AB1ECB /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		6E50C616391920CE05E5A5B8 /* Pods-SpacedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedTests/Pods-SpacedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88930AB7BF93102C3F9EFB1C /* Pods-SpacedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedUITests/Pods-SpacedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9337EB98287EFA360700EF05 /* Pods-SpacedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedTests/Pods-SpacedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
 				458598951FEDB07B00C26A95 /* TaskViewController.swift */,
+				45F63AC01FEEB5C900AB1ECB /* NewTaskViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */,
 				45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */,
+				45F63AC11FEEB5C900AB1ECB /* NewTaskViewController.swift in Sources */,
 				458598961FEDB07B00C26A95 /* TaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
