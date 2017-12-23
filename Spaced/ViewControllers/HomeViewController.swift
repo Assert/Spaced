@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
     @IBAction func gotoTasks(_ sender: UIButton) {
         self.tabBarController?.selectedIndex = 2
+                
     }
     
 }

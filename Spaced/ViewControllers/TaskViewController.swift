@@ -19,6 +19,10 @@ class TaskViewController: UIViewController, UITabBarControllerDelegate {
         writeTask()
     }
     
+    @IBAction func gotoNewTask(_ sender: UIButton) {
+        performSegue(withIdentifier: "newTaskSegue", sender: self)
+    }
+    
     func writeTask() {
         let db = Firestore.firestore()
         
