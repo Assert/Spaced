@@ -1,0 +1,17 @@
+.DS_Store
+*swp
+derivedData/
+*.gcno
+cobertura.xml
+xcuserdata/
+fastlane/report.xml
+fastlane/screenshots
+fastlane/gen/
+fastlane/test_output/
+fastlane/README.md
+*.xcuserdatad
+.idea/
+.irb-history
+Pods/
+# We will keep the generated Thrift-Swift files in git until everyone has a working Thrift generator 
+#gen-swift/
