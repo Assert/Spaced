@@ -17,7 +17,6 @@
 		45C4D3DE1FED9F5D00ED9BA8 /* SpacedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3DD1FED9F5D00ED9BA8 /* SpacedTests.swift */; };
 		45C4D3E91FED9F5D00ED9BA8 /* SpacedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3E81FED9F5D00ED9BA8 /* SpacedUITests.swift */; };
 		45D925121FF0FB1600DFC17A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */; };
-		45D925141FF0FC8200DFC17A /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D925131FF0FC8200DFC17A /* NewCategoryViewController.swift */; };
 		45D925161FF10AC900DFC17A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D925151FF10AC900DFC17A /* SettingsViewController.swift */; };
 		45D925181FF10C8700DFC17A /* FirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D925171FF10C8700DFC17A /* FirestoreHelper.swift */; };
 		45F63ABF1FEE7B1300AB1ECB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45F63ABE1FEE7B1300AB1ECB /* GoogleService-Info.plist */; };
@@ -61,7 +60,6 @@
 		45C4D3E81FED9F5D00ED9BA8 /* SpacedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacedUITests.swift; sourceTree = "<group>"; };
 		45C4D3EA1FED9F5D00ED9BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
-		45D925131FF0FC8200DFC17A /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		45D925151FF10AC900DFC17A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		45D925171FF10C8700DFC17A /* FirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreHelper.swift; sourceTree = "<group>"; };
 		45F63ABE1FEE7B1300AB1ECB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				458598951FEDB07B00C26A95 /* TaskViewController.swift */,
 				45F63AC01FEEB5C900AB1ECB /* NewTaskViewController.swift */,
 				45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */,
-				45D925131FF0FC8200DFC17A /* NewCategoryViewController.swift */,
 				45D925151FF10AC900DFC17A /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -485,7 +482,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */,
-				45D925141FF0FC8200DFC17A /* NewCategoryViewController.swift in Sources */,
 				45D925161FF10AC900DFC17A /* SettingsViewController.swift in Sources */,
 				45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */,
 				45F63AC11FEEB5C900AB1ECB /* NewTaskViewController.swift in Sources */,
