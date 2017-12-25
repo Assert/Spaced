@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F2F6FE68E158BD50749C656 /* Pods_Spaced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DA992B0441E534CE85605 /* Pods_Spaced.framework */; };
+		454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */; };
 		458598961FEDB07B00C26A95 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458598951FEDB07B00C26A95 /* TaskViewController.swift */; };
 		45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */; };
 		45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		18315827A8084FCD35D8EAE4 /* Pods-Spaced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spaced/Pods-Spaced.release.xcconfig"; sourceTree = "<group>"; };
 		3998B3246DF7838E807D6F56 /* Pods-SpacedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedUITests/Pods-SpacedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputTableViewCell.swift; sourceTree = "<group>"; };
 		458598951FEDB07B00C26A95 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		45C4D3C51FED9F5D00ED9BA8 /* Spaced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spaced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,9 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		454D18071FF1960D00C8A651 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		458598971FEDC43500C26A95 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				454D18071FF1960D00C8A651 /* Category */,
 				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
 				458598951FEDB07B00C26A95 /* TaskViewController.swift */,
 				45F63AC01FEEB5C900AB1ECB /* NewTaskViewController.swift */,
@@ -481,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */,
 				45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */,
 				45D925161FF10AC900DFC17A /* SettingsViewController.swift in Sources */,
 				45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */,

@@ -16,11 +16,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         loadCategories()
-        
-     //   let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("showEditing:")))
-     //   self.navigationItem.rightBarButtonItem = rightButton
     }
 
     public func loadCategories() {
@@ -32,19 +28,21 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
 
-    
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList.count
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = categoryList[indexPath.row]
-        return cell
+        return categoryList.count + 1
     }
 
-    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row >= categoryList.count) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! CategoryInputTableViewCell
+            cell.configure(text: "", placeholder: "Category name")
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = categoryList[indexPath.row]
+            return cell
+        }
+    }
     
     @IBAction func setEditMode(_ sender: UIBarButtonItem) {
         tableView.isEditing = !tableView.isEditing
