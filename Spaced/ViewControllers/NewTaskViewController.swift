@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class NewTaskViewController: UIViewController {
 
@@ -20,34 +19,12 @@ class NewTaskViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func saveNewTask(_ sender: UIButton) {
-        writeTask()
-        
+        guard let question = question.text, let answer = answer.text else { return }
+        FirestoreHelper().writeFact(question: question, answer: answer)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func writeTask() {
-        let db = Firestore.firestore()
-        
-        // Add a new document with a generated ID
-        var ref: DocumentReference? = nil
-        ref = db.collection("tasks").addDocument(data: [
-            "question": question.text as Any,
-            "answer": answer.text as Any,
-            "isPublic": false
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
     }
     
     /*
