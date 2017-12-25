@@ -15,9 +15,8 @@ class TaskViewController: UIViewController, UITabBarControllerDelegate {
         super.viewDidLoad()
         tabBarController?.delegate = self
     }
-    
-    @IBAction func gotoNewTask(_ sender: UIButton) {
+        
+    @IBAction func gotoNewFact(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "newTaskSegue", sender: self)
     }
-    
 }

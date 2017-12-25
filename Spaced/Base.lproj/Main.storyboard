@@ -89,14 +89,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zre-e1-Axo">
-                                <rect key="frame" x="148" y="464" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create new"/>
-                                <connections>
-                                    <action selector="gotoNewTask:" destination="nnO-c1-QZ0" eventType="touchUpInside" id="2Z4-c1-SUb"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List all facts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7De-6l-SRn">
                                 <rect key="frame" x="142" y="118" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,6 +102,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Facts" id="GRb-qV-TxG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="oee-qT-yVp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jrQ-rG-vSm">
+                            <connections>
+                                <action selector="gotoNewFact:" destination="nnO-c1-QZ0" id="AxF-bB-nke"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="72g-Zd-Lu9" kind="presentation" identifier="newTaskSegue" id="Nkt-hf-mfL"/>
