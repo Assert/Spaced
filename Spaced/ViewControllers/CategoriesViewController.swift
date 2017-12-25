@@ -18,6 +18,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
 
         loadCategories()
+        
+     //   let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("showEditing:")))
+     //   self.navigationItem.rightBarButtonItem = rightButton
     }
 
     public func loadCategories() {
@@ -44,7 +47,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBAction func gotoNewCategory(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "newCategorySegue", sender: self)
+        //performSegue(withIdentifier: "newCategorySegue", sender: self)
+        showEditing(sender: sender)
     }
     
     /*
@@ -57,4 +61,21 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     */
 
+    func showEditing(sender: UIBarButtonItem)
+    {
+        tableView.isEditing = !tableView.isEditing
+        
+        if(self.tableView.isEditing == true)
+        {
+            sender.title = "Done"
+            
+            //self.navigationItem.rightBarButtonItem?.title = "Done"
+        }
+        else
+        {
+            sender.title = "Edit"
+            //self.navigationItem.rightBarButtonItem?.title = "Edit"
+        }
+    }
+    
 }

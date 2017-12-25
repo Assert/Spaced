@@ -266,7 +266,7 @@
                         <viewLayoutGuide key="safeArea" id="3Jd-je-G3m"/>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="zWn-NE-eop">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zPC-w0-lQe">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="zPC-w0-lQe">
                             <connections>
                                 <action selector="gotoNewCategory:" destination="rzS-CW-hbN" id="FSw-za-t3h"/>
                             </connections>
