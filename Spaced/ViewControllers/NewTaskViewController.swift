@@ -21,9 +21,12 @@ class NewTaskViewController: UIViewController {
     }
     @IBAction func saveNewTask(_ sender: UIButton) {
         writeTask()
-        dismiss(animated: true, completion: nil)
+        
     }
     
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1i-PF-fq2">
+                            <tabBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1i-PF-fq2">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Home" id="6AF-R0-hf7"/>
@@ -28,24 +28,24 @@
                                     <tabBarItem title="Settings" id="kX3-8B-P5k"/>
                                 </items>
                             </tabBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-fA-EG7">
-                                <rect key="frame" x="0.0" y="151" width="375" height="248"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-fA-EG7">
+                                <rect key="frame" x="20" y="105" width="335" height="137"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="248" id="RSN-fY-c0g"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipp of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-bp-hTP">
-                                <rect key="frame" x="131" y="95" width="115" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tip of the day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-bp-hTP">
+                                <rect key="frame" x="20" y="64" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ib-Wj-bSZ">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ib-Wj-bSZ">
                                 <rect key="frame" x="1" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Home" id="RC6-70-As1"/>
@@ -53,32 +53,41 @@
                                     <tabBarItem title="Settings" id="mGJ-7d-bxx"/>
                                 </items>
                             </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-Ln-zNp">
-                                <rect key="frame" x="155" y="520" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-Ln-zNp">
+                                <rect key="frame" x="155" y="383" width="64" height="30"/>
                                 <state key="normal" title="New task"/>
                                 <connections>
                                     <action selector="gotoTasks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhu-ww-CFc"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0p-ob-dtB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Memorize" id="6AH-j9-ye5"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bVd-fA-EG7" firstAttribute="top" secondItem="1VK-bp-hTP" secondAttribute="bottom" constant="20" id="5Z3-KO-n0y"/>
+                            <constraint firstItem="V1i-PF-fq2" firstAttribute="top" secondItem="6Ib-Wj-bSZ" secondAttribute="top" id="DEt-ya-wDb"/>
+                            <constraint firstItem="1VK-bp-hTP" firstAttribute="leading" secondItem="bVd-fA-EG7" secondAttribute="leading" id="Ecf-RZ-I4K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bVd-fA-EG7" secondAttribute="trailing" constant="4" id="R8S-wN-may"/>
+                            <constraint firstItem="1VK-bp-hTP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WQQ-z3-FnI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Ib-Wj-bSZ" secondAttribute="trailing" constant="-17" id="WtV-Ed-lp1"/>
+                            <constraint firstItem="V1i-PF-fq2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="i2A-Io-GJJ"/>
+                            <constraint firstItem="6Ib-Wj-bSZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="jf0-nj-ZTB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1VK-bp-hTP" secondAttribute="trailing" constant="20" id="o3Q-aK-hyR"/>
+                            <constraint firstItem="hDr-Ln-zNp" firstAttribute="top" secondItem="bVd-fA-EG7" secondAttribute="bottom" constant="30" id="zda-se-9Xr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="YXm-VU-Z4I"/>
+                    <navigationItem key="navigationItem" title="Home" id="tbm-VA-foV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="tum-tA-uza"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tipOfTheDay" destination="bVd-fA-EG7" id="VSd-vV-hXT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2548" y="367"/>
+            <point key="canvasLocation" x="-3484" y="434"/>
         </scene>
-        <!--Tasks-->
+        <!--Fackts-->
         <scene sceneID="8SE-vp-SwN">
             <objects>
                 <viewController id="nnO-c1-QZ0" customClass="TaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,25 +110,20 @@
                                     <action selector="gotoNewTask:" destination="nnO-c1-QZ0" eventType="touchUpInside" id="2Z4-c1-SUb"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-Pd-80b">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Tasks" id="iHT-lR-wLt"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RuE-E7-wa0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" id="ojG-n2-vnn"/>
+                    <navigationItem key="navigationItem" title="Fackts" id="GRb-qV-TxG">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="oee-qT-yVp"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="kqh-sm-tH2" kind="presentation" identifier="newTaskSegue" id="Nkt-hf-mfL"/>
+                        <segue destination="72g-Zd-Lu9" kind="presentation" identifier="newTaskSegue" id="Nkt-hf-mfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2D-pF-m32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951" y="367"/>
+            <point key="canvasLocation" x="-614" y="1101"/>
         </scene>
         <!--New Task View Controller-->
         <scene sceneID="ah8-xR-3H2">
@@ -147,12 +151,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-fC-utb">
-                                <rect key="frame" x="1" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Create new task" id="hUp-hA-eVw"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-Ua-C6U">
                                 <rect key="frame" x="20" y="224" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -173,17 +171,22 @@
                             <constraint firstItem="uNX-vC-VyB" firstAttribute="leading" secondItem="0pZ-1b-yIs" secondAttribute="leading" id="K6L-lU-8q5"/>
                             <constraint firstItem="fIf-Ua-C6U" firstAttribute="top" secondItem="YPb-Q1-s6n" secondAttribute="bottom" constant="32" id="PFw-6t-4cf"/>
                             <constraint firstItem="Afc-qI-HKe" firstAttribute="trailing" secondItem="uNX-vC-VyB" secondAttribute="trailing" constant="20" id="Tgs-s4-RRd"/>
-                            <constraint firstItem="YPb-Q1-s6n" firstAttribute="top" secondItem="oAG-fC-utb" secondAttribute="bottom" constant="127" id="YC5-4A-zlt"/>
                             <constraint firstItem="Z3d-2M-0RE" firstAttribute="centerX" secondItem="SPe-Yr-uND" secondAttribute="centerX" id="aHa-99-ASB"/>
                             <constraint firstItem="0pZ-1b-yIs" firstAttribute="leading" secondItem="YPb-Q1-s6n" secondAttribute="trailing" constant="50" id="bXt-u3-RIG"/>
                             <constraint firstItem="uNX-vC-VyB" firstAttribute="top" secondItem="0pZ-1b-yIs" secondAttribute="bottom" constant="23" id="gwe-NL-jtC"/>
                             <constraint firstItem="fIf-Ua-C6U" firstAttribute="leading" secondItem="Afc-qI-HKe" secondAttribute="leading" constant="20" id="i78-eY-ysI"/>
                             <constraint firstItem="YPb-Q1-s6n" firstAttribute="leading" secondItem="Afc-qI-HKe" secondAttribute="leading" constant="20" id="t6G-iW-o7d"/>
                             <constraint firstItem="Z3d-2M-0RE" firstAttribute="top" secondItem="uNX-vC-VyB" secondAttribute="bottom" constant="20" id="wWA-HD-dri"/>
-                            <constraint firstItem="0pZ-1b-yIs" firstAttribute="top" secondItem="oAG-fC-utb" secondAttribute="bottom" constant="127" id="wbk-ED-UZi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Afc-qI-HKe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EiA-dH-hQa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="UcA-OA-SMr">
+                            <connections>
+                                <action selector="back:" destination="kqh-sm-tH2" id="oa7-Lw-78b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answer" destination="uNX-vC-VyB" id="4kq-3O-kvx"/>
                         <outlet property="question" destination="0pZ-1b-yIs" id="A65-5h-N3U"/>
@@ -191,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-dK-Fgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-169" y="367"/>
+            <point key="canvasLocation" x="1351" y="419"/>
         </scene>
         <!--Categories-->
         <scene sceneID="T81-x3-R2p">
@@ -208,13 +211,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BB-8g-6DC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Categories" id="Rog-Hr-p4p"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Jd-je-G3m"/>
@@ -223,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTL-q5-kD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1759" y="367"/>
+            <point key="canvasLocation" x="-1420" y="366.56671664167919"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h98-xu-86r">
@@ -235,9 +231,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GLY-Ew-8pa"/>
+                        <segue destination="hJk-w9-J4E" kind="relationship" relationship="viewControllers" id="GLY-Ew-8pa"/>
                         <segue destination="rzS-CW-hbN" kind="relationship" relationship="viewControllers" id="9rp-Vw-ekV"/>
-                        <segue destination="nnO-c1-QZ0" kind="relationship" relationship="viewControllers" id="Lec-xN-mMr"/>
+                        <segue destination="drC-rU-5cV" kind="relationship" relationship="viewControllers" id="Lec-xN-mMr"/>
                         <segue destination="8ZV-9I-oQW" kind="relationship" relationship="viewControllers" id="3eP-i2-onk"/>
                     </connections>
                 </tabBarController>
@@ -260,13 +256,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kn3-mu-f4v">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Setings" id="NE4-0v-LJ7"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Fyp-Hv-9Np"/>
@@ -277,6 +266,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYa-ND-WbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-951" y="-400"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="8yD-LJ-c3U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hJk-w9-J4E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="YXm-VU-Z4I"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mkg-WH-sMD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rBH-Mh-S4C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Wb-2T-yJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2548.8000000000002" y="366.11694152923542"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="sAN-UA-Pch">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="drC-rU-5cV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" id="ojG-n2-vnn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OCh-Dp-T22">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nnO-c1-QZ0" kind="relationship" relationship="rootViewController" id="mkW-W6-Xkb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVl-VT-cj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612.79999999999995" y="366.11694152923542"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4ba-pl-6qr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="72g-Zd-Lu9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RCv-gw-CZQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kqh-sm-tH2" kind="relationship" relationship="rootViewController" id="9E7-c8-y7m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftG-5v-3Ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342.39999999999998" y="505.54722638680664"/>
         </scene>
     </scenes>
 </document>
