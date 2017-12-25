@@ -36,6 +36,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         if (indexPath.row >= categoryList.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! CategoryInputTableViewCell
             cell.configure(text: "", placeholder: "Category name")
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

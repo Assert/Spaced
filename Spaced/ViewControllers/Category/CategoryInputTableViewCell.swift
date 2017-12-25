@@ -8,11 +8,22 @@
 
 import UIKit
 
-public class CategoryInputTableViewCell: UITableViewCell {
+public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet var categoryName: UITextField!
     
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        guard let category = textField.text else { return false }
+        
+        FirestoreHelper().writeCategory(name: category)
+        
+        textField.resignFirstResponder();
+        return true;
+    }
+    
     public func configure(text: String?, placeholder: String) {
+        categoryName.delegate = self
         categoryName.text = text
         categoryName.placeholder = placeholder
         

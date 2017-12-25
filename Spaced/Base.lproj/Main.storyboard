@@ -221,7 +221,6 @@
                                                 <constraint firstItem="nde-Dw-pPb" firstAttribute="top" secondItem="yAv-rF-NZi" secondAttribute="top" constant="10" id="qKK-Hh-rTO"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="tintColor" red="1" green="0.1786934272" blue="0.13281587049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="categoryName" destination="nde-Dw-pPb" id="Ckv-Pm-0rg"/>
                                         </connections>
