@@ -54,8 +54,8 @@
                                 </items>
                             </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-Ln-zNp">
-                                <rect key="frame" x="155" y="383" width="64" height="30"/>
-                                <state key="normal" title="New task"/>
+                                <rect key="frame" x="156" y="383" width="62" height="30"/>
+                                <state key="normal" title="New fact"/>
                                 <connections>
                                     <action selector="gotoTasks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhu-ww-CFc"/>
                                 </connections>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="-3484" y="434"/>
         </scene>
-        <!--Fackts-->
+        <!--Facts-->
         <scene sceneID="8SE-vp-SwN">
             <objects>
                 <viewController id="nnO-c1-QZ0" customClass="TaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,13 +95,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7De-6l-SRn">
-                                <rect key="frame" x="174" y="125" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zre-e1-Axo">
                                 <rect key="frame" x="148" y="464" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,11 +103,18 @@
                                     <action selector="gotoNewTask:" destination="nnO-c1-QZ0" eventType="touchUpInside" id="2Z4-c1-SUb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List all facts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7De-6l-SRn">
+                                <rect key="frame" x="142" y="118" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RuE-E7-wa0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Fackts" id="GRb-qV-TxG">
+                    <navigationItem key="navigationItem" title="Facts" id="GRb-qV-TxG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="oee-qT-yVp"/>
                     </navigationItem>
                     <connections>
@@ -123,9 +123,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2D-pF-m32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-614" y="1101"/>
+            <point key="canvasLocation" x="-615.20000000000005" y="1100.5997001499252"/>
         </scene>
-        <!--New Task View Controller-->
+        <!--Create new-->
         <scene sceneID="ah8-xR-3H2">
             <objects>
                 <viewController id="kqh-sm-tH2" customClass="NewTaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,8 +158,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-2M-0RE">
-                                <rect key="frame" x="154" y="283" width="66" height="30"/>
-                                <state key="normal" title="Save task"/>
+                                <rect key="frame" x="155" y="283" width="64" height="30"/>
+                                <state key="normal" title="Save fact"/>
                                 <connections>
                                     <action selector="saveNewTask:" destination="kqh-sm-tH2" eventType="touchUpInside" id="DaY-eo-XvC"/>
                                 </connections>
@@ -180,7 +180,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Afc-qI-HKe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EiA-dH-hQa">
+                    <navigationItem key="navigationItem" title="Create new" id="EiA-dH-hQa">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="UcA-OA-SMr">
                             <connections>
                                 <action selector="back:" destination="kqh-sm-tH2" id="oa7-Lw-78b"/>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-dK-Fgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1351" y="419"/>
+            <point key="canvasLocation" x="1688.8" y="418.74062968515744"/>
         </scene>
         <!--Categories-->
         <scene sceneID="T81-x3-R2p">
@@ -204,8 +204,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2z5-Z8-dC2">
-                                <rect key="frame" x="145" y="74" width="84" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List all categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2z5-Z8-dC2">
+                                <rect key="frame" x="120" y="137" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -215,11 +215,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Jd-je-G3m"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categories" id="6hD-n1-n6e"/>
+                    <navigationItem key="navigationItem" title="Categories" id="zWn-NE-eop"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTL-q5-kD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1420" y="366.56671664167919"/>
+            <point key="canvasLocation" x="-1080.8" y="366.56671664167919"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h98-xu-86r">
@@ -232,9 +232,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="hJk-w9-J4E" kind="relationship" relationship="viewControllers" id="GLY-Ew-8pa"/>
-                        <segue destination="rzS-CW-hbN" kind="relationship" relationship="viewControllers" id="9rp-Vw-ekV"/>
+                        <segue destination="uDW-WJ-fyu" kind="relationship" relationship="viewControllers" id="9rp-Vw-ekV"/>
                         <segue destination="drC-rU-5cV" kind="relationship" relationship="viewControllers" id="Lec-xN-mMr"/>
-                        <segue destination="8ZV-9I-oQW" kind="relationship" relationship="viewControllers" id="3eP-i2-onk"/>
+                        <segue destination="kpR-Jf-DWe" kind="relationship" relationship="viewControllers" id="3eP-i2-onk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VE-9K-kLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,8 +249,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1E-hk-9E6">
-                                <rect key="frame" x="166" y="128" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List all settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1E-hk-9E6">
+                                <rect key="frame" x="130" y="132" width="115" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -260,12 +260,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Fyp-Hv-9Np"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="UR3-sK-2XP"/>
+                    <navigationItem key="navigationItem" title="Settings" id="keL-a8-Or2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYa-ND-WbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951" y="-400"/>
+            <point key="canvasLocation" x="-612" y="-400.74962518740631"/>
         </scene>
         <!--Home-->
         <scene sceneID="8yD-LJ-c3U">
@@ -286,11 +286,11 @@
             </objects>
             <point key="canvasLocation" x="-2548.8000000000002" y="366.11694152923542"/>
         </scene>
-        <!--Tasks-->
+        <!--Facts-->
         <scene sceneID="sAN-UA-Pch">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="drC-rU-5cV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tasks" id="ojG-n2-vnn"/>
+                    <tabBarItem key="tabBarItem" title="Facts" id="ojG-n2-vnn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OCh-Dp-T22">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -303,7 +303,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVl-VT-cj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612.79999999999995" y="366.11694152923542"/>
+            <point key="canvasLocation" x="-274.39999999999998" y="365.66716641679164"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ba-pl-6qr">
@@ -321,7 +321,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftG-5v-3Ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342.39999999999998" y="505.54722638680664"/>
+            <point key="canvasLocation" x="680.79999999999995" y="505.09745127436287"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="g2Q-fd-EHj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uDW-WJ-fyu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categories" id="6hD-n1-n6e"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="18S-5h-MyC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rzS-CW-hbN" kind="relationship" relationship="rootViewController" id="s08-yR-UhZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tml-Kv-NJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1420.8" y="366.11694152923542"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="kbI-7i-9eA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpR-Jf-DWe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="UR3-sK-2XP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jhc-du-Bih">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8ZV-9I-oQW" kind="relationship" relationship="rootViewController" id="i6F-RJ-G3m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nmj-bg-eNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-952" y="-400.29985007496254"/>
         </scene>
     </scenes>
 </document>
