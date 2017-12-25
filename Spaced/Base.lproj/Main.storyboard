@@ -273,6 +273,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="mtp-wb-wNs" id="411-M0-OYL"/>
                         <segue destination="1nj-yr-ayf" kind="presentation" identifier="newCategorySegue" id="AdR-1K-WvW"/>
                     </connections>
                 </viewController>
