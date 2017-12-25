@@ -268,7 +268,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="zWn-NE-eop">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="zPC-w0-lQe">
                             <connections>
-                                <action selector="gotoNewCategory:" destination="rzS-CW-hbN" id="FSw-za-t3h"/>
+                                <action selector="setEditMode:" destination="rzS-CW-hbN" id="FSw-za-t3h"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

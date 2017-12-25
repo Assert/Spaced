@@ -46,9 +46,13 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     
     
-    @IBAction func gotoNewCategory(_ sender: UIBarButtonItem) {
-        //performSegue(withIdentifier: "newCategorySegue", sender: self)
-        showEditing(sender: sender)
+    @IBAction func setEditMode(_ sender: UIBarButtonItem) {
+        tableView.isEditing = !tableView.isEditing
+        if(self.tableView.isEditing == true) {
+            sender.title = "Done"
+        } else {
+            sender.title = "Edit"
+        }
     }
     
     /*
@@ -60,22 +64,5 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
-
-    func showEditing(sender: UIBarButtonItem)
-    {
-        tableView.isEditing = !tableView.isEditing
-        
-        if(self.tableView.isEditing == true)
-        {
-            sender.title = "Done"
-            
-            //self.navigationItem.rightBarButtonItem?.title = "Done"
-        }
-        else
-        {
-            sender.title = "Edit"
-            //self.navigationItem.rightBarButtonItem?.title = "Edit"
-        }
-    }
     
 }
