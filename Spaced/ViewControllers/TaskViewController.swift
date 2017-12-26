@@ -9,8 +9,11 @@
 import UIKit
 import Firebase
 
-class TaskViewController: UIViewController {
+class TaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private var categoryList: [String] = ["nnjj","jkk","ggggg"]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,4 +25,17 @@ class TaskViewController: UIViewController {
     @IBAction func gotoNewFact(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "newTaskSegue", sender: self)
     }
+    
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = categoryList[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
+        return cell
+    }
+    
 }
