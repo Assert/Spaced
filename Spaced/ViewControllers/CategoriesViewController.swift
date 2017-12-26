@@ -12,8 +12,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet var tableView: UITableView!
     
-    private var categoryList: [String] = []
-    
+    private var categoryNameList: [String] = []
+    private var categoryIdList: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCategories()
@@ -22,7 +23,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     public func loadCategories() {
         Categories.all { (categories) in
             categories?.forEach({ (cat) in
-                self.categoryList.append(cat.name)
+                self.categoryNameList.append(cat.name)
+                self.categoryIdList.append(cat.id)
             })
             guard let tableView = self.tableView else { return }
             tableView.reloadData()
@@ -30,17 +32,17 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList.count + 1
+        return categoryNameList.count + 1
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.row >= categoryList.count) {
+        if (indexPath.row >= categoryNameList.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! CategoryInputTableViewCell
             cell.configure(text: "", placeholder: "Category name")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = categoryList[indexPath.row]
+            cell.textLabel?.text = categoryNameList[indexPath.row]
             cell.accessoryType = .disclosureIndicator
             return cell
         }
@@ -48,11 +50,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // Row selected
     public func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
-        print("Row \(didSelectRowAt.row) selected")
-        
-        let ivc = self.storyboard?.instantiateViewController(withIdentifier: "TasksView") as? TaskViewController
-        ivc?.selectedCategoryId = "3hHyL9x0RVdMdC36icQB"
-        self.navigationController?.pushViewController(ivc!, animated: true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TasksView") as? TaskViewController
+        vc?.selectedCategoryId = categoryIdList[didSelectRowAt.row]
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 
     @IBAction func setEditMode(_ sender: UIBarButtonItem) {

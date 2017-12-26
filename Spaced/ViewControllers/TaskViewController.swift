@@ -37,7 +37,6 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "newTaskSegue", sender: self)
     }
     
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
     }
