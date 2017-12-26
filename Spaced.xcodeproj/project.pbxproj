@@ -116,9 +116,9 @@
 			children = (
 				454D18071FF1960D00C8A651 /* Category */,
 				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
+				45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */,
 				458598951FEDB07B00C26A95 /* TaskViewController.swift */,
 				45F63AC01FEEB5C900AB1ECB /* NewTaskViewController.swift */,
-				45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */,
 				45D925151FF10AC900DFC17A /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;

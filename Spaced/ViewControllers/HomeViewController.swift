@@ -8,14 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITabBarControllerDelegate {
+class HomeViewController: UIViewController {
 
     @IBOutlet var tipOfTheDay: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.delegate = self
-        
         showTipOfTheDay()
     }
 
@@ -24,7 +22,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         
       //  tipOfTheDay.text = tip
     }
-    
     
     @IBAction func gotoTasks(_ sender: UIButton) {
         self.tabBarController?.selectedIndex = 1

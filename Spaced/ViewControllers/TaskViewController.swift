@@ -9,11 +9,10 @@
 import UIKit
 import Firebase
 
-class TaskViewController: UIViewController, UITabBarControllerDelegate {
+class TaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.delegate = self
     }
 
     @IBAction func goBack(_ sender: UIBarButtonItem) {
