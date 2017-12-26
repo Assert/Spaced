@@ -15,7 +15,11 @@ class TaskViewController: UIViewController, UITabBarControllerDelegate {
         super.viewDidLoad()
         tabBarController?.delegate = self
     }
-        
+
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func gotoNewFact(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "newTaskSegue", sender: self)
     }

@@ -37,7 +37,6 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         if (indexPath.row >= categoryList.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! CategoryInputTableViewCell
             cell.configure(text: "", placeholder: "Category name")
-            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -50,6 +49,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     // Row selected
     public func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
         print("Row \(didSelectRowAt.row) selected")
+        performSegue(withIdentifier: "tasksSegue", sender: self)
     }
     
     @IBAction func setEditMode(_ sender: UIBarButtonItem) {
