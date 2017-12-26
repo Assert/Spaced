@@ -24,7 +24,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             categories?.forEach({ (cat) in
                 self.categoryList.append(cat.name)
             })
-            self.tableView.reloadData()
+            guard let tableView = self.tableView else { return }
+            tableView.reloadData()
         }
     }
 

@@ -19,6 +19,8 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
         FirestoreHelper().writeCategory(name: category)
         
         textField.resignFirstResponder();
+                
+        // Todo : Add new row to table view
         return true;
     }
     

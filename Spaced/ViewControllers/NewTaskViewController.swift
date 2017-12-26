@@ -21,6 +21,7 @@ class NewTaskViewController: UIViewController {
     @IBAction func saveNewTask(_ sender: UIButton) {
         guard let question = question.text, let answer = answer.text else { return }
         FirestoreHelper().writeFact(question: question, answer: answer)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
