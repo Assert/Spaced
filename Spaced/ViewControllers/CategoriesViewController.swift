@@ -42,8 +42,14 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.text = categoryList[indexPath.row]
+            cell.accessoryType = .disclosureIndicator
             return cell
         }
+    }
+    
+    // Row selected
+    public func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
+        print("Row \(didSelectRowAt.row) selected")
     }
     
     @IBAction func setEditMode(_ sender: UIBarButtonItem) {
