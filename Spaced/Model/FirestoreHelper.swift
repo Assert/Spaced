@@ -70,8 +70,8 @@ class FirestoreHelper {
 
     private let db = Firestore.firestore()
     
-    func writeFact(question: String, answer: String) {
-        db.collection("tasks").addDocument(data: [
+    func writeFact(categoryId: String, question: String, answer: String) {
+        db.collection("category").document(categoryId).collection("tasks").addDocument(data: [
             "question": question,
             "answer": answer,
             "isPublic": false

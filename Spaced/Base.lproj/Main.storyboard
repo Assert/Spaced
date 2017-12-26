@@ -127,7 +127,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="IWu-oE-Xnp" id="Fnh-c8-Gyg"/>
-                        <segue destination="707-9z-KO0" kind="show" identifier="newTaskSegue" id="UIZ-gR-eXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2D-pF-m32" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,7 +136,7 @@
         <!--Create new-->
         <scene sceneID="ah8-xR-3H2">
             <objects>
-                <viewController id="kqh-sm-tH2" customClass="NewTaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTaskView" id="kqh-sm-tH2" customClass="NewTaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SPe-Yr-uND">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,13 +181,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Afc-qI-HKe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create new" id="EiA-dH-hQa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="UcA-OA-SMr">
-                            <connections>
-                                <action selector="back:" destination="kqh-sm-tH2" id="oa7-Lw-78b"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Create new" id="EiA-dH-hQa"/>
                     <connections>
                         <outlet property="answer" destination="uNX-vC-VyB" id="4kq-3O-kvx"/>
                         <outlet property="question" destination="0pZ-1b-yIs" id="A65-5h-N3U"/>
@@ -196,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-dK-Fgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="1928"/>
+            <point key="canvasLocation" x="1639" y="1173"/>
         </scene>
         <!--Categories-->
         <scene sceneID="T81-x3-R2p">
@@ -392,7 +385,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rY-WG-VuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="1929"/>
+            <point key="canvasLocation" x="921" y="1173"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vW-t6-nwZ">

@@ -13,17 +13,22 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet var tableView: UITableView!
     
-    private var taskList: [String] = []
+    public var taskList: [String] = []
     
     public var selectedCategoryId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         guard let categoryId = selectedCategoryId else { return }
         loadTasks(categoryId: categoryId)
     }
     
     public func loadTasks(categoryId: String) {
+        taskList = []
         Tasks.all(categoryId: categoryId, completion: { (tasks) in
             tasks?.forEach({ (task) in
                 self.taskList.append(task.question)
@@ -34,7 +39,9 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func gotoNewFact(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "newTaskSegue", sender: self)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewTaskView") as? NewTaskViewController
+        vc?.selectedCategoryId = selectedCategoryId
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
