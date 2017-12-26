@@ -11,29 +11,40 @@ import Firebase
 
 class TaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private var categoryList: [String] = ["nnjj","jkk","ggggg"]
-
+    @IBOutlet var tableView: UITableView!
+    
+    private var taskList: [String] = []
+    
+    public var selectedCategoryId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    @IBAction func goBack(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        guard let categoryId = selectedCategoryId else { return }
+        loadTasks(categoryId: categoryId)
     }
     
+    public func loadTasks(categoryId: String) {
+        Tasks.all(categoryId: categoryId, completion: { (tasks) in
+            tasks?.forEach({ (task) in
+                self.taskList.append(task.question)
+            })
+            guard let tableView = self.tableView else { return }
+            tableView.reloadData()
+        })
+    }
+
     @IBAction func gotoNewFact(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "newTaskSegue", sender: self)
     }
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList.count
+        return taskList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = categoryList[indexPath.row]
+        cell.textLabel?.text = taskList[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
     }

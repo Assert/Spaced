@@ -9,11 +9,39 @@
 import Foundation
 import Firebase
 
+struct Tasks: Codable {
+    let id: String
+    let question: String
+    let answer: String
+}
+
+extension Tasks {
+    static func all(categoryId: String, completion: @escaping ([Tasks]?) -> ()) {
+        let db = Firestore.firestore()
+        db.collection("category").document(categoryId).collection("tasks").getDocuments { (snap, error) in
+            if let error = error {
+                print("Error getting document: \(error)")
+            } else {
+                let tasks: [Tasks] = snap!.documents.flatMap({
+                    var json = $0.data()
+                    json["id"] = $0.documentID
+                    
+                    if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
+                        let decoder = JSONDecoder()
+                        return try? decoder.decode(Tasks.self, from: jsonData)
+                    }
+                    return nil
+                })
+                completion(tasks)
+            }
+        }
+    }
+}
+
 struct Categories: Codable {
     let id: String
     let name: String
 }
-
 
 extension Categories {
     static func all(completion: @escaping ([Categories]?) -> ()) {

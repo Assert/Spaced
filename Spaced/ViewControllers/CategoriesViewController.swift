@@ -49,9 +49,12 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     // Row selected
     public func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
         print("Row \(didSelectRowAt.row) selected")
-        performSegue(withIdentifier: "tasksSegue", sender: self)
+        
+        let ivc = self.storyboard?.instantiateViewController(withIdentifier: "TasksView") as? TaskViewController
+        ivc?.selectedCategoryId = "3hHyL9x0RVdMdC36icQB"
+        self.navigationController?.pushViewController(ivc!, animated: true)
     }
-    
+
     @IBAction func setEditMode(_ sender: UIBarButtonItem) {
         tableView.isEditing = !tableView.isEditing
         if(self.tableView.isEditing == true) {

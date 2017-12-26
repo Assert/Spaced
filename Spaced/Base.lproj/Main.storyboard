@@ -84,13 +84,13 @@
         <!--Facts-->
         <scene sceneID="8SE-vp-SwN">
             <objects>
-                <viewController id="nnO-c1-QZ0" customClass="TaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasksView" id="nnO-c1-QZ0" customClass="TaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SuW-6G-pYG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IWu-oE-Xnp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="5ei-Hu-F4K">
@@ -119,11 +119,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Facts" id="GRb-qV-TxG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="oee-qT-yVp"/>
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Cg7-sX-ejP">
-                            <connections>
-                                <action selector="goBack:" destination="nnO-c1-QZ0" id="hRI-iQ-4K8"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jrQ-rG-vSm">
                             <connections>
                                 <action selector="gotoNewFact:" destination="nnO-c1-QZ0" id="AxF-bB-nke"/>
@@ -131,6 +126,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="IWu-oE-Xnp" id="Fnh-c8-Gyg"/>
                         <segue destination="707-9z-KO0" kind="show" identifier="newTaskSegue" id="UIZ-gR-eXp"/>
                     </connections>
                 </viewController>
@@ -272,7 +268,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mtp-wb-wNs" id="411-M0-OYL"/>
-                        <segue destination="F0X-k6-0hg" kind="show" identifier="tasksSegue" animates="NO" id="6G1-yg-Aro"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTL-q5-kD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
