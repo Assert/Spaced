@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F2F6FE68E158BD50749C656 /* Pods_Spaced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DA992B0441E534CE85605 /* Pods_Spaced.framework */; };
 		454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */; };
+		457AC6731FF40CBC00C086A5 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6721FF40CBC00C086A5 /* FactViewController.swift */; };
+		457AC6751FF4120100C086A5 /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6741FF4120100C086A5 /* AsyncResult.swift */; };
 		458598961FEDB07B00C26A95 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458598951FEDB07B00C26A95 /* FactsViewController.swift */; };
 		45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */; };
 		45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */; };
@@ -47,6 +49,8 @@
 		18315827A8084FCD35D8EAE4 /* Pods-Spaced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spaced/Pods-Spaced.release.xcconfig"; sourceTree = "<group>"; };
 		3998B3246DF7838E807D6F56 /* Pods-SpacedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedUITests/Pods-SpacedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputTableViewCell.swift; sourceTree = "<group>"; };
+		457AC6721FF40CBC00C086A5 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
+		457AC6741FF4120100C086A5 /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
 		458598951FEDB07B00C26A95 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		45C4D3C51FED9F5D00ED9BA8 /* Spaced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spaced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		457AC6761FF4120900C086A5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				457AC6741FF4120100C086A5 /* AsyncResult.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		458598971FEDC43500C26A95 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
 				45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */,
 				458598951FEDB07B00C26A95 /* FactsViewController.swift */,
+				457AC6721FF40CBC00C086A5 /* FactViewController.swift */,
 				45F63AC01FEEB5C900AB1ECB /* NewFactViewController.swift */,
 				45D925151FF10AC900DFC17A /* SettingsViewController.swift */,
 			);
@@ -150,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				45C4D3CF1FED9F5D00ED9BA8 /* Assets.xcassets */,
+				457AC6761FF4120900C086A5 /* Utils */,
 				45D925191FF10CB900DFC17A /* Model */,
 				458598971FEDC43500C26A95 /* ViewControllers */,
 				45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */,
@@ -492,8 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457AC6731FF40CBC00C086A5 /* FactViewController.swift in Sources */,
 				454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */,
 				45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */,
+				457AC6751FF4120100C086A5 /* AsyncResult.swift in Sources */,
 				45D925161FF10AC900DFC17A /* SettingsViewController.swift in Sources */,
 				45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */,
 				45F63AC11FEEB5C900AB1ECB /* NewFactViewController.swift in Sources */,

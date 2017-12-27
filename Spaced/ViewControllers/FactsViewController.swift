@@ -13,10 +13,12 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet var tableView: UITableView!
     
-    public var taskList: [String] = []
-    
+    public var taskIdList: [String] = []
+    public var taskNameList: [String] = []
+
     public var selectedCategoryId: String?
-    
+    public var selectedTaskId: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,10 +30,11 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     public func loadTasks(categoryId: String) {
-        taskList = []
+        taskNameList = []
         Tasks.all(categoryId: categoryId, completion: { (tasks) in
             tasks?.forEach({ (task) in
-                self.taskList.append(task.question)
+                self.taskIdList.append(task.id)
+                self.taskNameList.append(task.question)
             })
             guard let tableView = self.tableView else { return }
             tableView.reloadData()
@@ -44,17 +47,28 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 vc.selectedCategoryId = selectedCategoryId
             }
         }
+        
+        if segue.identifier == "ViewTaskSegue" {
+            if let vc = segue.destination as? FactViewController {
+                vc.selectedCategoryId = selectedCategoryId
+                vc.selectedTaskId = selectedTaskId
+            }
+        }
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskList.count
+        return taskNameList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = taskList[indexPath.row]
+        cell.textLabel?.text = taskNameList[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedTaskId = taskIdList[indexPath.row]
+        return indexPath
+    }
 }

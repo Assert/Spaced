@@ -49,7 +49,6 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    // Row selected
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedCategoryId = categoryIdList[indexPath.row]
         return indexPath

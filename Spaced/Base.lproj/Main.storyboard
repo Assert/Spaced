@@ -101,7 +101,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="VRE-eu-0Qp" kind="show" id="jat-hV-Ybu"/>
+                                            <segue destination="VRE-eu-0Qp" kind="show" identifier="ViewTaskSegue" id="jat-hV-Ybu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -396,7 +396,7 @@
         <!--Fact-->
         <scene sceneID="dVU-MB-fGe">
             <objects>
-                <viewController id="VRE-eu-0Qp" sceneMemberID="viewController">
+                <viewController id="VRE-eu-0Qp" customClass="FactViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZPg-Ub-UCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,14 +416,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y20-5O-Jl8">
-                                <rect key="frame" x="110" y="142" width="42" height="21"/>
+                                <rect key="frame" x="110" y="142" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb7-j9-z1K">
-                                <rect key="frame" x="110" y="235" width="42" height="21"/>
+                                <rect key="frame" x="110" y="235" width="249" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -434,10 +434,14 @@
                         <viewLayoutGuide key="safeArea" id="kRY-KY-dFc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fact" id="pcO-yZ-TXm"/>
+                    <connections>
+                        <outlet property="answer" destination="pb7-j9-z1K" id="4P1-ze-fNk"/>
+                        <outlet property="question" destination="y20-5O-Jl8" id="dHE-I2-2ZB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fs-vV-NeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511" y="1946"/>
+            <point key="canvasLocation" x="-511.19999999999999" y="1945.2773613193406"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vW-t6-nwZ">
@@ -477,8 +481,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aOQ-Bb-RH2"/>
-        <segue reference="wy3-Dq-ADf"/>
+        <segue reference="jat-hV-Ybu"/>
+        <segue reference="XaG-ZE-vMl"/>
         <segue reference="s33-Te-aoo"/>
     </inferredMetricsTieBreakers>
 </document>

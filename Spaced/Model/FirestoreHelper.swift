@@ -36,6 +36,46 @@ extension Tasks {
             }
         }
     }
+    
+    enum FirebaseError: Error {
+        case documentNotFound
+        case inactive
+    }
+    
+    static func one(categoryId: String, taskId: String) -> AsyncOperation<Tasks> {
+        let db = Firestore.firestore()
+        
+        return AsyncOperation { success, failure in
+            db.collection("category").document(categoryId).collection("tasks").document(taskId)
+                .getDocument(completion: { (snap, error) in
+                    if let error = error {
+                        print("Error getting document: \(error)")
+                        failure(error)
+                    } else {
+                        guard snap!.exists else {
+                            failure(FirebaseError.documentNotFound)
+                            return
+                        }
+                        if var json = snap?.data() {
+                            json["id"] = snap!.documentID
+                            
+//                            guard let active = json["active"] as? Bool, active == true else {
+//                                failure(FirebaseError.inactive)
+//                                return
+//                            }
+//
+                            if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
+                                let decoder = JSONDecoder()
+                                if let artist = try? decoder.decode(Tasks.self, from: jsonData) {
+                                    success(artist)
+                                }
+                            }
+                        }
+                    }
+                })
+        }
+    }
+    
 }
 
 struct Categories: Codable {
@@ -105,6 +145,18 @@ class FirestoreHelper {
             }
         }
     }
+/*
+    func getTask(categoryId: String, taskId: String) {
+        db.collection("category").document(categoryId).collection("tasks").document(taskId).getDocument { (snap
+            , err) in
+            
+            snap?.data()
+            
+            
+        }
 
+        }
+    }
+*/
     
 }
