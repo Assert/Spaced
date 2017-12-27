@@ -64,6 +64,20 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let selectedCategoryId = categoryIdList[indexPath.row]
+            FirestoreHelper().deleteCategory(categoryId: selectedCategoryId)
+            
+            categoryIdList.remove(at: indexPath.row)
+            categoryNameList.remove(at: indexPath.row)
+
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

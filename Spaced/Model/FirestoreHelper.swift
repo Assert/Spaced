@@ -96,5 +96,15 @@ class FirestoreHelper {
         }
     }
 
+    func deleteCategory(categoryId: String) {
+        db.collection("category").document(categoryId).delete { err in
+            if let err = err {
+                print("Error deleting document: \(err)")
+            } else {
+                print("Document deleted")
+            }
+        }
+    }
+
     
 }
