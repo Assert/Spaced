@@ -110,16 +110,19 @@ class FirestoreHelper {
 
     private let db = Firestore.firestore()
     
-    func writeFact(categoryId: String, question: String, answer: String) {
-        db.collection("category").document(categoryId).collection("tasks").addDocument(data: [
+    func writeFact(categoryId: String, question: String, answer: String, completion: @escaping (String?) -> ()) {
+        var ref: DocumentReference? = nil
+        ref = db.collection("category").document(categoryId).collection("tasks").addDocument(data: [
             "question": question,
             "answer": answer,
             "isPublic": false
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
+                completion(nil)
             } else {
-                print("Document added")
+                print("Document added with ID: \(ref!.documentID)")
+                completion(ref!.documentID)
             }
         }
     }
@@ -145,18 +148,5 @@ class FirestoreHelper {
             }
         }
     }
-/*
-    func getTask(categoryId: String, taskId: String) {
-        db.collection("category").document(categoryId).collection("tasks").document(taskId).getDocument { (snap
-            , err) in
-            
-            snap?.data()
-            
-            
-        }
-
-        }
-    }
-*/
     
 }

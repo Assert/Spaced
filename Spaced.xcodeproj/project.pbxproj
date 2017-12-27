@@ -11,6 +11,7 @@
 		454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */; };
 		457AC6731FF40CBC00C086A5 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6721FF40CBC00C086A5 /* FactViewController.swift */; };
 		457AC6751FF4120100C086A5 /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6741FF4120100C086A5 /* AsyncResult.swift */; };
+		457AC6781FF4468600C086A5 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6771FF4468600C086A5 /* ScheduleNotification.swift */; };
 		458598961FEDB07B00C26A95 /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458598951FEDB07B00C26A95 /* FactsViewController.swift */; };
 		45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */; };
 		45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */; };
@@ -51,6 +52,8 @@
 		454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputTableViewCell.swift; sourceTree = "<group>"; };
 		457AC6721FF40CBC00C086A5 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		457AC6741FF4120100C086A5 /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
+		457AC6771FF4468600C086A5 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
+		457AC6791FF45BE300C086A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		458598951FEDB07B00C26A95 /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		45C4D3C51FED9F5D00ED9BA8 /* Spaced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spaced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C4D3C81FED9F5D00ED9BA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				457AC6741FF4120100C086A5 /* AsyncResult.swift */,
+				457AC6771FF4468600C086A5 /* ScheduleNotification.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,6 +175,7 @@
 				45C4D3D11FED9F5D00ED9BA8 /* LaunchScreen.storyboard */,
 				45C4D3D41FED9F5D00ED9BA8 /* Info.plist */,
 				45F63ABE1FEE7B1300AB1ECB /* GoogleService-Info.plist */,
+				457AC6791FF45BE300C086A5 /* README.md */,
 			);
 			path = Spaced;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */,
 				45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */,
 				457AC6751FF4120100C086A5 /* AsyncResult.swift in Sources */,
+				457AC6781FF4468600C086A5 /* ScheduleNotification.swift in Sources */,
 				45D925161FF10AC900DFC17A /* SettingsViewController.swift in Sources */,
 				45C4D3C91FED9F5D00ED9BA8 /* AppDelegate.swift in Sources */,
 				45F63AC11FEEB5C900AB1ECB /* NewFactViewController.swift in Sources */,
@@ -685,6 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8G4WZWEFJ9;
 				INFOPLIST_FILE = Spaced/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.assert.spaced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -701,6 +708,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8G4WZWEFJ9;
 				INFOPLIST_FILE = Spaced/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.assert.spaced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
