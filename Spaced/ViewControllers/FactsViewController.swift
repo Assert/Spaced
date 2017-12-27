@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class TaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     
@@ -40,7 +40,7 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newTaskSegue" {
-            if let vc = segue.destination as? NewTaskViewController {
+            if let vc = segue.destination as? NewFactViewController {
                 vc.selectedCategoryId = selectedCategoryId
             }
         }

@@ -84,7 +84,7 @@
         <!--Facts-->
         <scene sceneID="8SE-vp-SwN">
             <objects>
-                <viewController storyboardIdentifier="TasksView" id="nnO-c1-QZ0" customClass="TaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasksView" id="nnO-c1-QZ0" customClass="FactsViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SuW-6G-pYG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
         <!--Create new-->
         <scene sceneID="ah8-xR-3H2">
             <objects>
-                <viewController storyboardIdentifier="NewTaskView" id="kqh-sm-tH2" customClass="NewTaskViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTaskView" id="kqh-sm-tH2" customClass="NewFactViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SPe-Yr-uND">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
