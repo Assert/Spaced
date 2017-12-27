@@ -22,6 +22,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     public func loadCategories() {
+        categoryNameList = []
+        categoryIdList = []
         Categories.all { (categories) in
             categories?.forEach({ (cat) in
                 self.categoryNameList.append(cat.name)
@@ -40,6 +42,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         if (indexPath.row >= categoryNameList.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! CategoryInputTableViewCell
             cell.configure(text: "", placeholder: "Category name")
+            cell.updateCallback = loadCategories
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -48,7 +51,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         }
     }
-    
+        
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedCategoryId = categoryIdList[indexPath.row]
         return indexPath

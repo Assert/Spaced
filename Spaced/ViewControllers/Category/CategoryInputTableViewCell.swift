@@ -12,6 +12,8 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet var categoryName: UITextField!
     
+    var updateCallback : (()-> Void)?
+    
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         guard let category = textField.text else { return false }
@@ -19,8 +21,9 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
         FirestoreHelper().writeCategory(name: category)
         
         textField.resignFirstResponder();
-                
-        // Todo : Add new row to table view
+        
+        updateCallback?()
+
         return true;
     }
     
