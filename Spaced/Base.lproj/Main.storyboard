@@ -100,6 +100,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VRE-eu-0Qp" kind="show" id="jat-hV-Ybu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -387,6 +390,31 @@
             </objects>
             <point key="canvasLocation" x="921" y="1173"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dVU-MB-fGe">
+            <objects>
+                <viewController id="VRE-eu-0Qp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZPg-Ub-UCg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-Hl-qor">
+                                <rect key="frame" x="132" y="237" width="37" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kRY-KY-dFc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pcO-yZ-TXm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fs-vV-NeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="1946"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vW-t6-nwZ">
             <objects>
@@ -405,5 +433,26 @@
             </objects>
             <point key="canvasLocation" x="-622" y="1173"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="esm-Mq-x0G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="unf-BN-9JA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RF2-7t-AyC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VRE-eu-0Qp" kind="relationship" relationship="rootViewController" id="aOQ-Bb-RH2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5y-Lw-2nD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="1945"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aOQ-Bb-RH2"/>
+    </inferredMetricsTieBreakers>
 </document>
