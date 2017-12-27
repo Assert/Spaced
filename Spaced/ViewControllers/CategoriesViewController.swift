@@ -14,6 +14,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private var categoryNameList: [String] = []
     private var categoryIdList: [String] = []
+    public var selectedCategoryId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +50,19 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     // Row selected
-    public func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TasksView") as? TaskViewController
-        vc?.selectedCategoryId = categoryIdList[didSelectRowAt.row]
-        self.navigationController?.pushViewController(vc!, animated: true)
+    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedCategoryId = categoryIdList[indexPath.row]
+        return indexPath
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FactsSegue" {
+            if let vc = segue.destination as? TaskViewController {
+                vc.selectedCategoryId = selectedCategoryId
+            }
+        }
+    }
+    
     @IBAction func setEditMode(_ sender: UIBarButtonItem) {
         tableView.isEditing = !tableView.isEditing
         if(self.tableView.isEditing == true) {

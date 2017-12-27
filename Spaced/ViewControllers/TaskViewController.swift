@@ -37,11 +37,13 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.reloadData()
         })
     }
-
-    @IBAction func gotoNewFact(_ sender: UIBarButtonItem) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewTaskView") as? NewTaskViewController
-        vc?.selectedCategoryId = selectedCategoryId
-        self.navigationController?.pushViewController(vc!, animated: true)
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newTaskSegue" {
+            if let vc = segue.destination as? NewTaskViewController {
+                vc.selectedCategoryId = selectedCategoryId
+            }
+        }
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

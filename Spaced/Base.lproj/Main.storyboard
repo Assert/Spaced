@@ -124,7 +124,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="oee-qT-yVp"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jrQ-rG-vSm">
                             <connections>
-                                <action selector="gotoNewFact:" destination="nnO-c1-QZ0" id="AxF-bB-nke"/>
+                                <segue destination="kqh-sm-tH2" kind="show" identifier="newTaskSegue" id="XaG-ZE-vMl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2D-pF-m32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200.80000000000001" y="1172.5637181409297"/>
+            <point key="canvasLocation" x="-548" y="1196"/>
         </scene>
         <!--Create new-->
         <scene sceneID="ah8-xR-3H2">
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-dK-Fgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="1173"/>
+            <point key="canvasLocation" x="330" y="1196"/>
         </scene>
         <!--Categories-->
         <scene sceneID="T81-x3-R2p">
@@ -213,6 +213,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nnO-c1-QZ0" kind="show" identifier="FactsSegue" id="EpF-qc-qEL"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="inputCell" id="k9U-bl-WLg" customClass="CategoryInputTableViewCell" customModule="Spaced" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -388,7 +391,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rY-WG-VuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="1173"/>
+            <point key="canvasLocation" x="1106" y="1173"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dVU-MB-fGe">
@@ -413,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fs-vV-NeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="1946"/>
+            <point key="canvasLocation" x="-511" y="1946"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vW-t6-nwZ">
@@ -431,7 +434,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dy9-GI-ePs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622" y="1173"/>
+            <point key="canvasLocation" x="-1330" y="1873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="esm-Mq-x0G">
@@ -449,10 +452,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5y-Lw-2nD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="1945"/>
+            <point key="canvasLocation" x="329" y="1932"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aOQ-Bb-RH2"/>
+        <segue reference="wy3-Dq-ADf"/>
+        <segue reference="s33-Te-aoo"/>
     </inferredMetricsTieBreakers>
 </document>
