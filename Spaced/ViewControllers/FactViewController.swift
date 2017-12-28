@@ -8,17 +8,45 @@
 
 import UIKit
 
-class FactViewController: UIViewController {
+class FactViewController: UIViewController, UITextFieldDelegate {
+    
+    
 
-    @IBOutlet var answer: UILabel!
     @IBOutlet var question: UILabel!
+    @IBOutlet var textField: UITextField!
     
     public var selectedCategoryId: String?
     public var selectedTaskId: String?
+    
+    private var correctAnswer: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self;
+        self.textField.becomeFirstResponder()
         loadFact()
+    }
+
+    @IBAction func btnAnswer(_ sender: UIButton) {
+        print(answerQuestion())
+        textField.resignFirstResponder()
+    }
+    @IBAction func btnCancel(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        print(answerQuestion())
+        
+        return true
+    }
+    
+    private func answerQuestion() -> Bool {
+        guard let answer = self.textField.text else { return false }
+        guard let correctAnswer = self.correctAnswer else { return false }
+        return (answer == correctAnswer)
     }
     
     private func loadFact() {
@@ -26,8 +54,8 @@ class FactViewController: UIViewController {
         guard let taskId = selectedTaskId else { return }
         
         Tasks.one(categoryId: categoryId, taskId: taskId).then { (task) in
-            self.answer.text = task.answer
-            self.question.text = task.question
+            self.correctAnswer = task.answer
+            self.question.text = "What is \(task.question)?"
         }.catch({ (error) in
             print(error)
         })
