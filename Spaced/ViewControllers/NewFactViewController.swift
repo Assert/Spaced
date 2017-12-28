@@ -30,7 +30,7 @@ class NewFactViewController: UIViewController {
             let body = "Lorem ipsum"
             let intervalInSeconds = TimeInterval(120)
             
-            let notification = NotificationBody(id: notificationId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: true)
+            let notification = NotificationBody(id: notificationId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: false)
             ScheduleNotification.set(notification: notification, completion: { success in
                 if success {
                     print("Successfully scheduled notification")

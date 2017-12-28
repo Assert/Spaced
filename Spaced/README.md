@@ -1,11 +1,15 @@
 #  ToDo
 
+- On click notification go to deeplink to answer view
+    - Detect click when
+        - App open
+        - Terminated
+        - Background
 - Private repo
 - Answer inside notifications
 - Make View Controller for answerings
     - Check if answer is correct and re-schedule notification
 - Deeplink support to answer tasks
-- On click notification go to deeplink to answer view
 - Firebase anonyoumus login
 - Cloud function to create user space
 - Rules for writing only in user space

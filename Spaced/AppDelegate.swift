@@ -10,40 +10,25 @@ import UIKit
 import Firebase
 import UserNotifications
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Setup Firebase
         FirebaseApp.configure()
-
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
-            if granted {
-                print("Approval granted to send notifications")
-            } else {
-                print(error)
-            }
-            
-        }
-        application.registerForRemoteNotifications()
         
-        
+        // Request notification authorization
+        ScheduleNotification.requestAuthorization()
 
         return true
     }
 
     // Getting the device push token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print(deviceTokenString)
-        
-        
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
