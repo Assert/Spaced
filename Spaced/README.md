@@ -6,6 +6,7 @@
         - Terminated
         - Background
 - Private repo
+- Badge 
 - Answer inside notifications
 - Make View Controller for answerings
     - Check if answer is correct and re-schedule notification

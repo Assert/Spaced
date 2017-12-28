@@ -13,6 +13,8 @@ import UserNotifications
 
 struct NotificationBody {
     let id: String
+    let factId: String
+    let categoryId: String
     let title: String
     let subtitle: String
     let body: String
@@ -26,8 +28,8 @@ struct ScheduleNotification {
     static func set(notification: NotificationBody, completion: @escaping (Bool) -> ()) {
         
         let userInfo: [AnyHashable: Any] = [
-            AnyHashable("factId"): "123",
-            AnyHashable("categoryId"): "abc"
+            AnyHashable("factId"): notification.factId,
+            AnyHashable("categoryId"): notification.categoryId
         ]
         
         // Create Notification content

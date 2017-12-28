@@ -42,10 +42,10 @@ extension HomeViewController: UNUserNotificationCenterDelegate {
         let subtitle = notification.request.content.subtitle
         
         let userInfo = notification.request.content.userInfo as NSDictionary
-        guard let categoryId = userInfo["categoryId"] else { return }
-        guard let factId = userInfo["factId"] else { return }
-
-        print("\(subtitle) - \(categoryId) - \(factId) ")
+        if let categoryId = userInfo["categoryId"], let factId = userInfo["factId"] {
+            print("\(subtitle) - \(categoryId) - \(factId) ")
+            // Re-schedule or show?
+        }
     }
     
     // Called when a notification is delivered to a background app and user opens it
@@ -55,9 +55,12 @@ extension HomeViewController: UNUserNotificationCenterDelegate {
         let subtitle = response.notification.request.content.subtitle
         
         let userInfo = response.notification.request.content.userInfo as NSDictionary
-        guard let categoryId = userInfo["categoryId"] else { return }
-        guard let factId = userInfo["factId"] else { return }
-        
-        print("\(subtitle) - \(categoryId) - \(factId) ")
+
+        if let categoryId = userInfo["categoryId"], let factId = userInfo["factId"] {
+            print("\(subtitle) - \(categoryId) - \(factId) ")
+            // Go to deeplink
+        }
+
+        completionHandler()
     }
 }

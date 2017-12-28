@@ -24,13 +24,15 @@ class NewFactViewController: UIViewController {
         guard let categoryId = selectedCategoryId else { return }
         
         FirestoreHelper().writeFact(categoryId: categoryId, question: question, answer: answer) { docId in
-            guard let notificationId = docId else { return }
+            guard let factId = docId else { return }
+            let notificationId = factId // Use the same
             
             let title = "Do you remember?"
             let body = "Lorem ipsum"
             let intervalInSeconds = TimeInterval(120)
             
-            let notification = NotificationBody(id: notificationId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: false)
+            let notification = NotificationBody(id: notificationId, factId: factId, categoryId: categoryId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: false)
+            
             ScheduleNotification.set(notification: notification, completion: { success in
                 if success {
                     print("Successfully scheduled notification")
