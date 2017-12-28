@@ -52,13 +52,15 @@ extension HomeViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("📲 Background notification tapped")
         
-        let subtitle = response.notification.request.content.subtitle
-        
+//        let subtitle = response.notification.request.content.subtitle
         let userInfo = response.notification.request.content.userInfo as NSDictionary
 
-        if let categoryId = userInfo["categoryId"], let factId = userInfo["factId"] {
-            print("\(subtitle) - \(categoryId) - \(factId) ")
-            // Go to deeplink
+        if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
+            // Deeplink to answer page
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Fact") as? FactViewController
+            vc?.selectedCategoryId = categoryId
+            vc?.selectedTaskId = factId
+            self.navigationController?.pushViewController(vc!, animated: true)
         }
 
         completionHandler()

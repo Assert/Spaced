@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IWu-oE-Xnp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="5ei-Hu-F4K">
@@ -197,7 +197,7 @@
         <!--Categories-->
         <scene sceneID="T81-x3-R2p">
             <objects>
-                <viewController id="rzS-CW-hbN" customClass="CategoriesViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Categories" id="rzS-CW-hbN" customClass="CategoriesViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gyp-6C-ZVJ" customClass="CategoriesVierwController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -404,7 +404,7 @@
         <!--Fact-->
         <scene sceneID="dVU-MB-fGe">
             <objects>
-                <viewController id="VRE-eu-0Qp" customClass="FactViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Fact" id="VRE-eu-0Qp" customClass="FactViewController" customModule="Spaced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZPg-Ub-UCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -493,6 +493,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="jat-hV-Ybu"/>
         <segue reference="XaG-ZE-vMl"/>
-        <segue reference="s33-Te-aoo"/>
+        <segue reference="EpF-qc-qEL"/>
     </inferredMetricsTieBreakers>
 </document>

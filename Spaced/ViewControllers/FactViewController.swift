@@ -10,8 +10,6 @@ import UIKit
 
 class FactViewController: UIViewController, UITextFieldDelegate {
     
-    
-
     @IBOutlet var question: UILabel!
     @IBOutlet var textField: UITextField!
     
@@ -30,6 +28,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
     @IBAction func btnAnswer(_ sender: UIButton) {
         print(answerQuestion())
         textField.resignFirstResponder()
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnCancel(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -39,7 +38,8 @@ class FactViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
 
         print(answerQuestion())
-        
+        self.navigationController?.popViewController(animated: true)
+
         return true
     }
     
