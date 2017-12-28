@@ -26,24 +26,42 @@ class FactViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func btnAnswer(_ sender: UIButton) {
-        print(answerQuestion())
-        textField.resignFirstResponder()
-        self.navigationController?.popViewController(animated: true)
+        answerQuestion()
     }
+    
     @IBAction func btnCancel(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-
-        print(answerQuestion())
-        self.navigationController?.popViewController(animated: true)
-
+        answerQuestion()
         return true
     }
     
-    private func answerQuestion() -> Bool {
+    private func answerQuestion() {
+        textField.resignFirstResponder()
+        guard let correctAnswer = self.correctAnswer else { return }
+
+        if (checkQuestion()) {
+            // update FB with correct answer
+
+            let alert = UIAlertController(title: "Awsome", message: "Perfect!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            // Update FB with wrong answer
+
+            let alert = UIAlertController(title: "Ops", message: "The correct answer is: \(String(describing: correctAnswer))", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func checkQuestion()  -> Bool {
         guard let answer = self.textField.text else { return false }
         guard let correctAnswer = self.correctAnswer else { return false }
         return (answer == correctAnswer)
