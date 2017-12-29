@@ -18,6 +18,7 @@ class NewFactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        question.becomeFirstResponder()
     }
     
     @IBAction func saveNewTask(_ sender: UIButton) {

@@ -35,16 +35,6 @@ struct ScheduleNotification {
         }
     }
 
-    static func decBadgetCount(badge: NSNumber?) -> NSNumber {
-        guard let oldCount = badge as? Int else { return 0 }
-        let newCount = oldCount - 1
-        if (newCount > 0) {
-            return NSNumber(value: newCount)
-        } else {
-            return 0
-        }
-    }
-
     // Create Notification trigger
     private static func set(notification: NotificationBody, completion: @escaping (Bool) -> ()) {
         
@@ -143,7 +133,7 @@ struct ScheduleNotification {
     private static func getInterval(t: IntervalStep) -> TimeInterval {
         switch t {
         case 0:
-            return TimeInterval(3600) // 1h
+            return TimeInterval(60) // 1h  -  3600
         case 1:
             return TimeInterval(18000) // 5h
         case 2:

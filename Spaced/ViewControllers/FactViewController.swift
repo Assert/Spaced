@@ -49,6 +49,12 @@ class FactViewController: UIViewController, UITextFieldDelegate {
         guard let question = question.text else { return }
         guard let oldInterval = intervalType else { return }
 
+        // Dec Badge count
+        let oldBadgeCount = UIApplication.shared.applicationIconBadgeNumber
+        let newBadgeCount = ((oldBadgeCount - 1) >= 0) ? (oldBadgeCount - 1) : 0
+        
+        UIApplication.shared.applicationIconBadgeNumber = newBadgeCount
+        
         if (checkQuestion()) {
             let new = ScheduleNotification.correctAnswer(t: oldInterval)
             // update FB with new type
