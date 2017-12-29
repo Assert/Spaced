@@ -9,6 +9,9 @@ target 'Spaced' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
+
 
   target 'SpacedTests' do
     inherit! :search_paths
