@@ -26,28 +26,15 @@ class NewFactViewController: UIViewController {
         
         FirestoreHelper().writeFact(categoryId: categoryId, question: question, answer: answer) { docId in
             guard let factId = docId else { return }
-            let notificationId = factId // Use the same
             
-            let title = "Do you remember?"
-            let body = "Lorem ipsum"
-            let intervalInSeconds = TimeInterval(120)
+            ScheduleNotification.send(factId: factId, categoryId: categoryId, question: question, intervalStep: 0)
             
-            let notification = NotificationBody(id: notificationId, factId: factId, categoryId: categoryId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: false)
-            
-            ScheduleNotification.set(notification: notification, completion: { success in
-                if success {
-                    print("Successfully scheduled notification")
-                } else {
-                    print("Error scheduling notification")
-                }
-                
-                Analytics.logEvent("fact_created", parameters: [
-                    "notification_added": success as NSObject
-                    ])
-            })
+            Analytics.logEvent("fact_created", parameters: nil)
             
             self.navigationController?.popViewController(animated: true)
         }
-        
     }
+
+   
+    
 }

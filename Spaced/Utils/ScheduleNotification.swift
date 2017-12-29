@@ -22,10 +22,12 @@ struct NotificationBody {
     let repeats: Bool
 }
 
+typealias IntervalStep = Int
+
 struct ScheduleNotification {
     
     // Create Notification trigger
-    static func set(notification: NotificationBody, completion: @escaping (Bool) -> ()) {
+    private static func set(notification: NotificationBody, completion: @escaping (Bool) -> ()) {
         
         let userInfo: [AnyHashable: Any] = [
             AnyHashable("factId"): notification.factId,
@@ -55,7 +57,6 @@ struct ScheduleNotification {
             }
         })
     }
-    
 
     static func requestAuthorization() {
         let center = UNUserNotificationCenter.current()
@@ -84,6 +85,76 @@ struct ScheduleNotification {
         }
     }
     
+    static func send(factId: String, categoryId: String, question: String, intervalStep: IntervalStep) {
+        let notificationId = factId // Use the same
+        
+        let title = "Do you remember?"
+        let body = "Lorem ipsum"
+        let intervalInSeconds = getInterval(t: intervalStep)
+        
+        let notification = NotificationBody(id: notificationId, factId: factId, categoryId: categoryId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: false)
+        
+        ScheduleNotification.set(notification: notification, completion: { success in
+            if success {
+                print("Successfully scheduled notification")
+            } else {
+                print("Error scheduling notification")
+            }
+        })
+    }
     
+    private static func nextInterval(t: IntervalStep) -> IntervalStep {
+        let max = 7
+        if (t < max) {
+            return t+1
+        } else {
+            return max
+        }
+    }
+    
+    private static func preInterval(t: IntervalStep) -> IntervalStep {
+        if (t > 0) {
+            return t-1
+        } else {
+            return 0
+        }
+    }
+    
+    private static func getInterval(t: IntervalStep) -> TimeInterval {
+        switch t {
+        case 0:
+            return TimeInterval(3600) // 1h
+        case 1:
+            return TimeInterval(18000) // 5h
+        case 2:
+            return TimeInterval(86400)  // 1day
+        case 3:
+            return TimeInterval(172800) // two days
+        case 4:
+            return TimeInterval(345600)   // four days
+        case 5:
+            return TimeInterval(518400)   // Six days
+        case 6:
+            return TimeInterval(1209600)  //12
+        case 7:
+            return TimeInterval(2592000)     // 30 days
+        default:
+            return TimeInterval(345600) // four days
+        }
+    }
+    
+    static func correctAnswer(t: IntervalStep) -> IntervalStep {
+        return nextInterval(t: t)
+    }
+    
+    static func wrongAnswer(t: IntervalStep) -> IntervalStep {
+        return preInterval(t: t)
+    }
+    
+    static func snooze(t: IntervalStep) -> IntervalStep {
+        return t
+    }
+    
+
 }
 

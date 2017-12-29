@@ -13,6 +13,7 @@ struct Tasks: Codable {
     let id: String
     let question: String
     let answer: String
+    let intervalType: Int
 }
 
 extension Tasks {
@@ -122,7 +123,7 @@ class FirestoreHelper {
         ref = db.collection("users").document(uid).collection("categories").document(categoryId).collection("facts").addDocument(data: [
             "question": question,
             "answer": answer,
-            "isPublic": false
+            "intervalType": 0
         ]) { err in
             if let err = err {
                 print("Error adding fact: \(err)")
