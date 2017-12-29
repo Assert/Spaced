@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FactViewController: UIViewController, UITextFieldDelegate {
     
@@ -64,7 +65,14 @@ class FactViewController: UIViewController, UITextFieldDelegate {
     private func checkQuestion()  -> Bool {
         guard let answer = self.textField.text else { return false }
         guard let correctAnswer = self.correctAnswer else { return false }
-        return (answer == correctAnswer)
+        
+        let wasCorrect = (answer == correctAnswer)
+        
+        Analytics.logEvent("answer_question", parameters: [
+            "wasCorrect": wasCorrect as NSObject
+        ])
+        
+        return wasCorrect
     }
     
     private func loadFact() {

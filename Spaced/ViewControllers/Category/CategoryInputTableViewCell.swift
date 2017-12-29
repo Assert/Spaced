@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
     
@@ -20,13 +21,17 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         FirestoreHelper().writeCategory(name: category)
         
-        textField.resignFirstResponder();
+        Analytics.logEvent("category_created", parameters: [
+            "name": category as NSObject
+            ])
+        
+        textField.resignFirstResponder()
         
         updateCallback?()
 
         return true;
     }
-    
+
     public func configure(text: String?, placeholder: String) {
         categoryName.delegate = self
         categoryName.text = text

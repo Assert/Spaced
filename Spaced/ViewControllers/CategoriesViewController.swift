@@ -18,9 +18,17 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadCategories()
     }
+    
+    // Remove the keyboard when loading view (used on back)
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.sendAction(#selector(UIView.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 
+    // Todo: remove keyboard when touch ouside keyboard
+    
     public func loadCategories() {
         categoryNameList = []
         categoryIdList = []
@@ -53,7 +61,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
         
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        selectedCategoryId = categoryIdList[indexPath.row]
+        selectedCategoryId = categoryIdList[indexPath.row]  // Kan få error her categoryIdList=1 (indexPath.row=1 som er create)
+        // Tror det har noe med at keyboard ikke forsvinner når man går tilbake uten å lage fact
+        // resignFirstResponder
         return indexPath
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewFactViewController: UIViewController {
 
@@ -39,6 +40,10 @@ class NewFactViewController: UIViewController {
                 } else {
                     print("Error scheduling notification")
                 }
+                
+                Analytics.logEvent("fact_created", parameters: [
+                    "notification_added": success as NSObject
+                    ])
             })
             
             self.navigationController?.popViewController(animated: true)

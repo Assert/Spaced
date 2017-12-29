@@ -229,6 +229,14 @@ Copyright 2017 Google
 
 Copyright 2017 Google
 
+## FirebasePerformance
+
+Copyright 2017 Google
+
+## FirebaseSwizzlingUtilities
+
+Copyright 2017 Google
+
 ## GTMSessionFetcher
 
 
