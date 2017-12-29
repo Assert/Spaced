@@ -17,8 +17,10 @@ struct Tasks: Codable {
 
 extension Tasks {
     static func all(categoryId: String, completion: @escaping ([Tasks]?) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         let db = Firestore.firestore()
-        db.collection("category").document(categoryId).collection("tasks").getDocuments { (snap, error) in
+        db.collection("users").document(uid).collection("categories").document(categoryId).collection("facts")
+            .getDocuments { (snap, error) in
             if let error = error {
                 print("Error getting document: \(error)")
             } else {
@@ -42,14 +44,17 @@ extension Tasks {
         case inactive
     }
     
-    static func one(categoryId: String, taskId: String) -> AsyncOperation<Tasks> {
+    static func one(categoryId: String, factId: String) -> AsyncOperation<Tasks> {
         let db = Firestore.firestore()
         
         return AsyncOperation { success, failure in
-            db.collection("category").document(categoryId).collection("tasks").document(taskId)
+            
+            if let uid = Auth.auth().currentUser?.uid {
+            
+            db.collection("users").document(uid).collection("categories").document(categoryId).collection("facts").document(factId)
                 .getDocument(completion: { (snap, error) in
                     if let error = error {
-                        print("Error getting document: \(error)")
+                        print("Error getting fact: \(error)")
                         failure(error)
                     } else {
                         guard snap!.exists else {
@@ -73,9 +78,9 @@ extension Tasks {
                         }
                     }
                 })
+            }
         }
     }
-    
 }
 
 struct Categories: Codable {
@@ -85,10 +90,11 @@ struct Categories: Codable {
 
 extension Categories {
     static func all(completion: @escaping ([Categories]?) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         let db = Firestore.firestore()
-        db.collection("category").getDocuments { (snap, error) in
+        db.collection("users").document(uid).collection("categories").getDocuments { (snap, error) in
             if let error = error {
-                print("Error getting document: \(error)")
+                print("Error getting category: \(error)")
             } else {
                 let artists: [Categories] = snap!.documents.flatMap({
                     var json = $0.data()
@@ -111,40 +117,43 @@ class FirestoreHelper {
     private let db = Firestore.firestore()
     
     func writeFact(categoryId: String, question: String, answer: String, completion: @escaping (String?) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         var ref: DocumentReference? = nil
-        ref = db.collection("category").document(categoryId).collection("tasks").addDocument(data: [
+        ref = db.collection("users").document(uid).collection("categories").document(categoryId).collection("facts").addDocument(data: [
             "question": question,
             "answer": answer,
             "isPublic": false
         ]) { err in
             if let err = err {
-                print("Error adding document: \(err)")
+                print("Error adding fact: \(err)")
                 completion(nil)
             } else {
-                print("Document added with ID: \(ref!.documentID)")
+                print("Fact added with ID: \(ref!.documentID)")
                 completion(ref!.documentID)
             }
         }
     }
     
     func writeCategory(name: String) {
-        db.collection("category").addDocument(data: [
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        db.collection("users").document(uid).collection("categories").addDocument(data: [
             "name": name
         ]) { err in
             if let err = err {
-                print("Error adding document: \(err)")
+                print("Error adding category: \(err)")
             } else {
-                print("Document added")
+                print("Category added")
             }
         }
     }
 
     func deleteCategory(categoryId: String) {
-        db.collection("category").document(categoryId).delete { err in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        db.collection("users").document(uid).collection("categories").document(categoryId).delete { err in
             if let err = err {
-                print("Error deleting document: \(err)")
+                print("Error deleting category: \(err)")
             } else {
-                print("Document deleted")
+                print("Category deleted")
             }
         }
     }

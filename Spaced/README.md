@@ -1,26 +1,19 @@
 #  ToDo
 
-- On click notification go to deeplink to answer view
-    - Detect click when
-        - App open
-        - Terminated
-        - Background
+- Front page, with next fact
 - Private repo
-- Badge 
+
 - Answer inside notifications
-- Make View Controller for answerings
-    - Check if answer is correct and re-schedule notification
-- Deeplink support to answer tasks
-- Firebase anonyoumus login
-- Cloud function to create user space
-- Rules for writing only in user space
 - Auto layout
 - Edit facts
-- Front page
+
 - Settings
     - Do not disturbe
     - Add login (FB/Google)
+
+- Badge (also show a dot for pushed facts inside app)
 - Push logic
+    - Check if answer is correct and re-schedule notification
     - Max 5 pr day (from settings)
     - Only within (do not disturbe)
     - inc by 12h if correct

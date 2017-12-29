@@ -71,7 +71,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
         guard let categoryId = selectedCategoryId else { return }
         guard let taskId = selectedTaskId else { return }
         
-        Tasks.one(categoryId: categoryId, taskId: taskId).then { (task) in
+        Tasks.one(categoryId: categoryId, factId: taskId).then { (task) in
             self.correctAnswer = task.answer
             self.question.text = "What is \(task.question)?"
         }.catch({ (error) in

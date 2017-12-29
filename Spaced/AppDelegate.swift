@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Setup Firebase
         FirebaseApp.configure()
+
+        Auth.auth().signInAnonymously { (user, error) in
+            if let user = user {
+                print("🕵🏻 Anonymously as user \(user.uid)")
+            } else {
+                print(error?.localizedDescription ?? "Error signing in")
+                //Hide tabs?
+            }
+        }
         
         // Request notification authorization
         ScheduleNotification.requestAuthorization()

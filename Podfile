@@ -8,7 +8,7 @@ target 'Spaced' do
   # Pods for Spaced
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-
+  pod 'Firebase/Auth'
 
   target 'SpacedTests' do
     inherit! :search_paths
