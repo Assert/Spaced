@@ -15,4 +15,4 @@ fastlane/README.md
 Pods/
 # We will keep the generated Thrift-Swift files in git until everyone has a working Thrift generator 
 #gen-swift/
-functions/node_modules
+Firebase/functions/node_modules
