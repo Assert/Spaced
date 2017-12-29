@@ -6,7 +6,7 @@
 - Answer inside notifications
 - Auto layout
 - Edit facts
-
+- re-schedule notificastion is app is open
 - Settings
     - Do not disturbe
     - Add login (FB/Google)

@@ -51,11 +51,12 @@ extension HomeViewController: UNUserNotificationCenterDelegate {
         print("📲 Foreground notification")
         
         let subtitle = notification.request.content.subtitle
-        
         let userInfo = notification.request.content.userInfo as NSDictionary
-        if let categoryId = userInfo["categoryId"], let factId = userInfo["factId"] {
+        if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
             print("\(subtitle) - \(categoryId) - \(factId) ")
-            // Re-schedule or show?
+            // Re-schedule since app is open
+            let shortInterval = 0
+            ScheduleNotification.send(factId: factId, categoryId: categoryId, question: subtitle, intervalStep: shortInterval)
         }
     }
     

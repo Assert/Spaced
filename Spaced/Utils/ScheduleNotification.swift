@@ -26,6 +26,25 @@ typealias IntervalStep = Int
 
 struct ScheduleNotification {
     
+    private static func incBadgetCount(badge: NSNumber?) -> NSNumber {
+        if let oldCount = badge as? Int {
+            let newCount = NSNumber(value: oldCount + 1)
+            return newCount
+        } else {
+            return 1
+        }
+    }
+
+    static func decBadgetCount(badge: NSNumber?) -> NSNumber {
+        guard let oldCount = badge as? Int else { return 0 }
+        let newCount = oldCount - 1
+        if (newCount > 0) {
+            return NSNumber(value: newCount)
+        } else {
+            return 0
+        }
+    }
+
     // Create Notification trigger
     private static func set(notification: NotificationBody, completion: @escaping (Bool) -> ()) {
         
@@ -33,13 +52,14 @@ struct ScheduleNotification {
             AnyHashable("factId"): notification.factId,
             AnyHashable("categoryId"): notification.categoryId
         ]
-        
+
         // Create Notification content
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = notification.title
         notificationContent.subtitle = notification.subtitle
         notificationContent.body = notification.body
         notificationContent.userInfo = userInfo
+        notificationContent.badge = incBadgetCount(badge: notificationContent.badge)
         
         // Note that 60 seconds is the smallest repeating interval.
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: notification.inSeconds, repeats: notification.repeats)
