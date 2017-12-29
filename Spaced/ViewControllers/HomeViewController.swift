@@ -22,11 +22,10 @@ class HomeViewController: UIViewController {
         showTipOfTheDay()
         
         let button = UIButton(type: .roundedRect)
-        button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
-        button.setTitle("Crash", for: [])
+        button.frame = CGRect(x: 10, y: 115, width: 100, height: 30)
+        button.setTitle("Test a crash :/", for: [])
         button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
         view.addSubview(button)
-        
     }
 
     @IBAction func crashButtonTapped(_ sender: AnyObject) {
@@ -34,7 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     func showTipOfTheDay() {
-        let tip = "A tip of the day is a snippet of practical advice that may be offered on a daily basis to users and readers of a website, newspaper, magazine, software program or media broadcast."
+//        let tip = "A tip of the day is a snippet of practical advice that may be offered on a daily basis to users and readers of a website, newspaper, magazine, software program or media broadcast."
         
       //  tipOfTheDay.text = tip
     }

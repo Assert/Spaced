@@ -17,10 +17,13 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     public var taskNameList: [String] = []
 
     public var selectedCategoryId: String?
+    public var selectedCategoryName: String?
     public var selectedTaskId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = selectedCategoryName
     }
     
     override func viewWillAppear(_ animated: Bool) {

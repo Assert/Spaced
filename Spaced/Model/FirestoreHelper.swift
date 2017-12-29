@@ -135,15 +135,18 @@ class FirestoreHelper {
         }
     }
     
-    func writeCategory(name: String) {
+    func writeCategory(name: String, completion: @escaping (String?) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        db.collection("users").document(uid).collection("categories").addDocument(data: [
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").document(uid).collection("categories").addDocument(data: [
             "name": name
         ]) { err in
             if let err = err {
                 print("Error adding category: \(err)")
+                completion(nil)
             } else {
                 print("Category added")
+                completion(ref!.documentID)
             }
         }
     }

@@ -15,6 +15,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     private var categoryNameList: [String] = []
     private var categoryIdList: [String] = []
     public var selectedCategoryId: String?
+    private var selectedCategoryName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row >= categoryNameList.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! CategoryInputTableViewCell
-            cell.configure(text: "", placeholder: "Category name")
-            cell.updateCallback = loadCategories
+            cell.configure(text: "", placeholder: "New category...")
+            cell.updateCallback = gotoTasks
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -59,11 +60,20 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         }
     }
-        
+    
+    func gotoTasks(categoryId: String, categoryName: String) {
+        self.loadCategories()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TasksView") as? FactsViewController
+        vc?.selectedCategoryId = categoryId
+        vc?.selectedCategoryName = categoryName
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedCategoryId = categoryIdList[indexPath.row]  // Kan få error her categoryIdList=1 (indexPath.row=1 som er create)
         // Tror det har noe med at keyboard ikke forsvinner når man går tilbake uten å lage fact
         // resignFirstResponder
+        selectedCategoryName = categoryNameList[indexPath.row]
         return indexPath
     }
     
@@ -71,6 +81,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         if segue.identifier == "FactsSegue" {
             if let vc = segue.destination as? FactsViewController {
                 vc.selectedCategoryId = selectedCategoryId
+                vc.selectedCategoryName = selectedCategoryName
             }
         }
     }

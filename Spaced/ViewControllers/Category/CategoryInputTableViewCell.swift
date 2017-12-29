@@ -13,13 +13,18 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet var categoryName: UITextField!
     
-    var updateCallback : (()-> Void)?
+    var updateCallback : ((_ categoryId: String, _ categoryName: String)-> Void)?
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         guard let category = textField.text else { return false }
         
-        FirestoreHelper().writeCategory(name: category)
+        FirestoreHelper().writeCategory(name: category) { (categoryId) in
+            guard let categoryId = categoryId else { return }
+            guard let categoryName = self.categoryName.text else { return }
+            
+            self.updateCallback?(categoryId, categoryName)
+        }
         
         Analytics.logEvent("category_created", parameters: [
             "name": category as NSObject
@@ -27,7 +32,6 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         textField.resignFirstResponder()
         
-        updateCallback?()
 
         return true;
     }

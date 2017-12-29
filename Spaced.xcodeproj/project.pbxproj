@@ -242,7 +242,7 @@
 				45C4D3C31FED9F5D00ED9BA8 /* Resources */,
 				21131792AE9126B19F15DEAB /* [CP] Embed Pods Frameworks */,
 				D041C1C1A40E4433167C61C1 /* [CP] Copy Pods Resources */,
-				457349221FF62EF300E260DE /* Crashlytics */,
+				457349221FF62EF300E260DE /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -415,14 +415,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpacedTests/Pods-SpacedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		457349221FF62EF300E260DE /* Crashlytics */ = {
+		457349221FF62EF300E260DE /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Crashlytics;
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

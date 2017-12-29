@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,67 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1i-PF-fq2">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Home" id="6AF-R0-hf7"/>
-                                    <tabBarItem title="Categories" id="Gru-Gg-RvY"/>
-                                    <tabBarItem title="Settings" id="kX3-8B-P5k"/>
-                                </items>
-                            </tabBar>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ib-Wj-bSZ">
-                                <rect key="frame" x="1" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Home" id="RC6-70-As1"/>
-                                    <tabBarItem title="Categories" id="JG9-RY-UnM"/>
-                                    <tabBarItem title="Settings" id="mGJ-7d-bxx"/>
-                                </items>
-                            </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-Ln-zNp">
-                                <rect key="frame" x="156" y="383" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New fact"/>
-                                <connections>
-                                    <action selector="gotoTasks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhu-ww-CFc"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-fA-EG7">
-                                <rect key="frame" x="20" y="136" width="335" height="137"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-fA-EG7">
+                                <rect key="frame" x="10" y="145" width="355" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip of the day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-bp-hTP">
-                                <rect key="frame" x="20" y="95" width="335" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip of the day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-bp-hTP">
+                                <rect key="frame" x="10" y="94" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDr-Ln-zNp">
+                                <rect key="frame" x="50" y="385" width="275" height="30"/>
+                                <state key="normal" title="New fact"/>
+                                <connections>
+                                    <action selector="gotoTasks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhu-ww-CFc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="V1i-PF-fq2" firstAttribute="top" secondItem="6Ib-Wj-bSZ" secondAttribute="top" id="DEt-ya-wDb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6Ib-Wj-bSZ" secondAttribute="trailing" constant="-17" id="WtV-Ed-lp1"/>
-                            <constraint firstItem="V1i-PF-fq2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="i2A-Io-GJJ"/>
-                            <constraint firstItem="6Ib-Wj-bSZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="jf0-nj-ZTB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hDr-Ln-zNp" secondAttribute="trailing" constant="50" id="Hsu-ee-igP"/>
+                            <constraint firstItem="hDr-Ln-zNp" firstAttribute="top" secondItem="bVd-fA-EG7" secondAttribute="bottom" constant="40" id="PZP-Rg-Wco"/>
+                            <constraint firstItem="bVd-fA-EG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="RI8-MI-uIE"/>
+                            <constraint firstItem="hDr-Ln-zNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="f5i-pN-7ky"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bVd-fA-EG7" secondAttribute="trailing" constant="10" id="hYP-4e-8Rt"/>
+                            <constraint firstItem="1VK-bp-hTP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nYn-MH-gPg"/>
+                            <constraint firstItem="bVd-fA-EG7" firstAttribute="top" secondItem="1VK-bp-hTP" secondAttribute="bottom" constant="30" id="qUj-cQ-enX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1VK-bp-hTP" secondAttribute="trailing" constant="10" id="s9s-XN-C2x"/>
+                            <constraint firstItem="1VK-bp-hTP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="tFg-Qx-IBH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="tbm-VA-foV">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="tum-tA-uza"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Home" id="tbm-VA-foV"/>
                     <connections>
                         <outlet property="tipOfTheDay" destination="bVd-fA-EG7" id="VSd-vV-hXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2546" y="1174"/>
+            <point key="canvasLocation" x="-2546.4000000000001" y="1173.4632683658172"/>
         </scene>
         <!--Facts-->
         <scene sceneID="8SE-vp-SwN">
@@ -253,8 +234,12 @@
                         <constraints>
                             <constraint firstItem="mtp-wb-wNs" firstAttribute="trailing" secondItem="3Jd-je-G3m" secondAttribute="trailing" id="EPX-k0-ZlK"/>
                             <constraint firstItem="mtp-wb-wNs" firstAttribute="bottom" secondItem="3Jd-je-G3m" secondAttribute="bottom" id="LXd-Wj-BhG"/>
+                            <constraint firstItem="mtp-wb-wNs" firstAttribute="trailing" secondItem="3Jd-je-G3m" secondAttribute="trailing" id="Lrd-Wk-KSs"/>
+                            <constraint firstItem="mtp-wb-wNs" firstAttribute="top" secondItem="3Jd-je-G3m" secondAttribute="top" id="UoH-dx-ju4"/>
+                            <constraint firstItem="mtp-wb-wNs" firstAttribute="bottom" secondItem="3Jd-je-G3m" secondAttribute="bottom" id="fxN-AG-TXw"/>
                             <constraint firstItem="mtp-wb-wNs" firstAttribute="leading" secondItem="3Jd-je-G3m" secondAttribute="leading" id="iEg-pZ-AZt"/>
                             <constraint firstItem="mtp-wb-wNs" firstAttribute="top" secondItem="3Jd-je-G3m" secondAttribute="top" id="nln-e6-osG"/>
+                            <constraint firstItem="mtp-wb-wNs" firstAttribute="leading" secondItem="3Jd-je-G3m" secondAttribute="leading" id="wb6-N6-0dg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Jd-je-G3m"/>
                     </view>
@@ -290,7 +275,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VE-9K-kLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1759" y="-399"/>
+            <point key="canvasLocation" x="-1423" y="-701"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xwi-1K-eAV">
