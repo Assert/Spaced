@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import UserNotifications
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Request notification authorization
         ScheduleNotification.requestAuthorization()
 
+        // Initialize the Google Mobile Ads SDK with AdMob app ID
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-5259470458329777~9161080511")
+        
         return true
     }
 

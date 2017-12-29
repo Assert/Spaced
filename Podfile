@@ -12,6 +12,7 @@ target 'Spaced' do
   pod 'Fabric', '~> 1.7.2'
   pod 'Crashlytics', '~> 3.9.3'
   pod 'Firebase/Performance'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'SpacedTests' do
     inherit! :search_paths

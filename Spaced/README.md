@@ -29,7 +29,6 @@
 - Rate this app
 - Locale
 - Circle setup
-- Analytics events
 - Ads
 - InApp
 - Sell questions
