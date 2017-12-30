@@ -30,13 +30,11 @@ class SettingsViewController: UIViewController, GADRewardBasedVideoAdDelegate {
         print("Checking ad")
         print(rewardBasedVideo?.isReady ?? "")
         
-//        if rewardBasedVideo?.isReady == true {
+        if rewardBasedVideo?.isReady == true {
             rewardBasedVideo?.present(fromRootViewController: self)
-//        }
+        }
     }
-    
-
-    
+        
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didFailToLoadWithError error: Error) {
         print("Reward based video ad failed to load: \(error.localizedDescription)")

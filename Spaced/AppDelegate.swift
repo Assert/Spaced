@@ -93,21 +93,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("📲 Background notification tapped")
         
-        //        let subtitle = response.notification.request.content.subtitle
         let userInfo = response.notification.request.content.userInfo as NSDictionary
-        
         if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
             // Deeplink to answer page
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = mainStoryboard.instantiateViewController(withIdentifier: "Fact") as? FactViewController
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "AnswerFact") as? FactViewController
             vc?.selectedCategoryId = categoryId
             vc?.selectedTaskId = factId
             
-            let tabCtrl = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
-            //        let tabCtrl = self.window?.rootViewController as! UITabBarController
-            tabCtrl.present(vc!, animated: true, completion: nil)
-
+            let tabCtrl = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController
+            if let answerVc = vc  {
+                tabCtrl?.present(answerVc, animated: true, completion: nil)
+            }
             completionHandler()
         }
     }
