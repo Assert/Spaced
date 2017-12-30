@@ -52,6 +52,7 @@
 		3998B3246DF7838E807D6F56 /* Pods-SpacedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedUITests/Pods-SpacedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputTableViewCell.swift; sourceTree = "<group>"; };
 		457349231FF6E3E200E260DE /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		457349281FF7CD8E00E260DE /* Spaced.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spaced.entitlements; sourceTree = "<group>"; };
 		457AC6721FF40CBC00C086A5 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		457AC6741FF4120100C086A5 /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
 		457AC6771FF4468600C086A5 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		45C4D3C71FED9F5D00ED9BA8 /* Spaced */ = {
 			isa = PBXGroup;
 			children = (
+				457349281FF7CD8E00E260DE /* Spaced.entitlements */,
 				45C4D3CF1FED9F5D00ED9BA8 /* Assets.xcassets */,
 				457AC6761FF4120900C086A5 /* Utils */,
 				45D925191FF10CB900DFC17A /* Model */,
@@ -319,6 +321,14 @@
 					45C4D3C41FED9F5D00ED9BA8 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					45C4D3D81FED9F5D00ED9BA8 = {
 						CreatedOnToolsVersion = 9.1;
@@ -715,6 +725,7 @@
 			baseConfigurationReference = C02234E8F471DC05A45C205D /* Pods-Spaced.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Spaced/Spaced.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8G4WZWEFJ9;
 				INFOPLIST_FILE = Spaced/Info.plist;
@@ -732,6 +743,7 @@
 			baseConfigurationReference = 18315827A8084FCD35D8EAE4 /* Pods-Spaced.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Spaced/Spaced.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8G4WZWEFJ9;
 				INFOPLIST_FILE = Spaced/Info.plist;

@@ -12,9 +12,6 @@ import GoogleMobileAds
 class SettingsViewController: UIViewController, GADRewardBasedVideoAdDelegate {
     
     var rewardBasedVideo: GADRewardBasedVideoAd?
-
-    /// Is an ad being loaded.
-    var adRequestInProgress = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,26 +29,20 @@ class SettingsViewController: UIViewController, GADRewardBasedVideoAdDelegate {
     @IBAction func acceptNotifications(_ sender: UIButton) {
         print("Checking ad")
         print(rewardBasedVideo?.isReady ?? "")
-
         
 //        if rewardBasedVideo?.isReady == true {
             rewardBasedVideo?.present(fromRootViewController: self)
-
 //        }
-        
-        
     }
     
 
     
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didFailToLoadWithError error: Error) {
-        adRequestInProgress = false
         print("Reward based video ad failed to load: \(error.localizedDescription)")
     }
     
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-        adRequestInProgress = false
         print("Reward based video ad is received.")
     }
     
@@ -74,7 +65,6 @@ class SettingsViewController: UIViewController, GADRewardBasedVideoAdDelegate {
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
-//        earnCoins(NSInteger(reward.amount))
     }
 
     

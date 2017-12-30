@@ -12,7 +12,7 @@ import UserNotifications
 import GoogleMobileAds
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -20,11 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup Firebase
         FirebaseApp.configure()
 
+        // Firebase login
         Auth.auth().signInAnonymously { (user, error) in
             if let user = user {
-                print("🕵🏻 Anonymously as user \(user.uid)")
+                print("🕵🏻 Firebase anonymouse login as user \(user.uid)")
             } else {
-                print(error?.localizedDescription ?? "Error signing in")
+                print(error?.localizedDescription ?? "Error signing in to Firebase")
                 //Hide tabs?
             }
         }
@@ -35,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize the Google Mobile Ads SDK with AdMob app ID
         GADMobileAds.configure(withApplicationID: "ca-app-pub-5259470458329777~9161080511")
         
+        // Handle notification responses in AppDelegate
+        UNUserNotificationCenter.current().delegate = self
+
         return true
     }
 
@@ -42,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print(deviceTokenString)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Not available in simulator \(error)")
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -66,6 +74,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // Called when a notification is delivered to a foreground app
+    func userNotificationCenter(_ center: UNUserNotificationCenter,  willPresent notification: UNNotification, withCompletionHandler   completionHandler: @escaping (_ options:   UNNotificationPresentationOptions) -> Void) {
+        print("📲 Foreground notification")
+        
+        let subtitle = notification.request.content.subtitle
+        let userInfo = notification.request.content.userInfo as NSDictionary
+        if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
+            print("\(subtitle) - \(categoryId) - \(factId) ")
+            // Re-schedule since app is open
+            let shortInterval = 0
+            ScheduleNotification.send(factId: factId, categoryId: categoryId, question: subtitle, intervalStep: shortInterval)
+        }
+        completionHandler([.badge, .alert, .sound]) // Remove this line?
+    }
+    
+    // Called when a notification is delivered to a background app and user opens it
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("📲 Background notification tapped")
+        
+        //        let subtitle = response.notification.request.content.subtitle
+        let userInfo = response.notification.request.content.userInfo as NSDictionary
+        
+        if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
+            // Deeplink to answer page
+            
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "Fact") as? FactViewController
+            vc?.selectedCategoryId = categoryId
+            vc?.selectedTaskId = factId
+            
+            let tabCtrl = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
+            //        let tabCtrl = self.window?.rootViewController as! UITabBarController
+            tabCtrl.present(vc!, animated: true, completion: nil)
 
+            completionHandler()
+        }
+    }
 }
 

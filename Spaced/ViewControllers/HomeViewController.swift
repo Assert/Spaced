@@ -17,8 +17,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UNUserNotificationCenter.current().delegate = self
-
         showTipOfTheDay()
         
         let button = UIButton(type: .roundedRect)
@@ -44,37 +42,3 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UNUserNotificationCenterDelegate {
-    
-    // Called when a notification is delivered to a foreground app
-    func userNotificationCenter(_ center: UNUserNotificationCenter,  willPresent notification: UNNotification, withCompletionHandler   completionHandler: @escaping (_ options:   UNNotificationPresentationOptions) -> Void) {
-        print("📲 Foreground notification")
-        
-        let subtitle = notification.request.content.subtitle
-        let userInfo = notification.request.content.userInfo as NSDictionary
-        if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
-            print("\(subtitle) - \(categoryId) - \(factId) ")
-            // Re-schedule since app is open
-            let shortInterval = 0
-            ScheduleNotification.send(factId: factId, categoryId: categoryId, question: subtitle, intervalStep: shortInterval)
-        }
-    }
-    
-    // Called when a notification is delivered to a background app and user opens it
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("📲 Background notification tapped")
-        
-//        let subtitle = response.notification.request.content.subtitle
-        let userInfo = response.notification.request.content.userInfo as NSDictionary
-
-        if let categoryId = userInfo["categoryId"] as? String, let factId = userInfo["factId"] as? String {
-            // Deeplink to answer page
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Fact") as? FactViewController
-            vc?.selectedCategoryId = categoryId
-            vc?.selectedTaskId = factId
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
-
-        completionHandler()
-    }
-}

@@ -32,7 +32,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func btnCancel(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -62,7 +62,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
             
             let alert = UIAlertController(title: "Awsome", message: "Perfect!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
-                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -72,7 +72,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
 
             let alert = UIAlertController(title: "Ops", message: "The correct answer is: \(String(describing: correctAnswer))", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
-                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)
         }

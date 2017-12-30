@@ -51,13 +51,13 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        if segue.identifier == "ViewTaskSegue" {
+        if segue.identifier == "AnswerSeque" {
             if let vc = segue.destination as? FactViewController {
                 vc.selectedCategoryId = selectedCategoryId
                 vc.selectedTaskId = selectedTaskId
             }
         }
-    }
+     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskNameList.count
