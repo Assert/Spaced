@@ -19,6 +19,10 @@ class NewFactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         question.becomeFirstResponder()
+        question.autocapitalizationType = UITextAutocapitalizationType.sentences
+        question.spellCheckingType = UITextSpellCheckingType.yes
+        answer.autocapitalizationType = UITextAutocapitalizationType.sentences
+        answer.spellCheckingType = UITextSpellCheckingType.yes
     }
     
     @IBAction func saveNewTask(_ sender: UIButton) {

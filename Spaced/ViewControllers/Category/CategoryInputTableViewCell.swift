@@ -43,5 +43,8 @@ public class CategoryInputTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         categoryName.accessibilityValue = text
         categoryName.accessibilityLabel = placeholder
+        categoryName.autocapitalizationType = UITextAutocapitalizationType.sentences
+        categoryName.spellCheckingType = UITextSpellCheckingType.yes        
+        //        categoryName.becomeFirstResponder()
     }
 }

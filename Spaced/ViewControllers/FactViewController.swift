@@ -23,7 +23,10 @@ class FactViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self;
-        self.textField.becomeFirstResponder()
+        textField.autocapitalizationType = UITextAutocapitalizationType.sentences
+        textField.spellCheckingType = UITextSpellCheckingType.yes
+        textField.becomeFirstResponder()
+
         loadFact()
     }
 
