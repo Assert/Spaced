@@ -16,4 +16,4 @@ Pods/
 # We will keep the generated Thrift-Swift files in git until everyone has a working Thrift generator 
 #gen-swift/
 Firebase/functions/node_modules
-Spaced.xcworkspace/xcuserdata/**
+*/xcuserdata/*
