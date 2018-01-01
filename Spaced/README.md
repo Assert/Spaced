@@ -1,10 +1,8 @@
 #  ToDo
 
 ## Fix
-Capital letter
 Category name in push
 Questions multi-line
-Badge count only one and zero
 Remove "What is...?" On questions
 - Auto layout
 

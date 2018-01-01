@@ -101,7 +101,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
         Tasks.one(categoryId: categoryId, factId: taskId).then { (task) in
             self.correctAnswer = task.answer
             self.intervalType = task.intervalType
-            self.question.text = "What is \(task.question)?"
+            self.question.text = "\(task.question)?"
         }.catch({ (error) in
             print(error)
         })
