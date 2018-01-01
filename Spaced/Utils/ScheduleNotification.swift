@@ -87,14 +87,14 @@ struct ScheduleNotification {
         }
     }
     
-    static func send(factId: String, categoryId: String, question: String, intervalStep: IntervalStep) {
+    static func send(factId: String, categoryId: String, categoryName: String, question: String, intervalStep: IntervalStep) {
         let notificationId = factId // Use the same
         
         let title = "Do you remember?"
-        let body = "Lorem ipsum"
+        let body = question
         let intervalInSeconds = getInterval(t: intervalStep)
         
-        let notification = NotificationBody(id: notificationId, factId: factId, categoryId: categoryId, title: title, subtitle: question, body: body, inSeconds: intervalInSeconds, repeats: false)
+        let notification = NotificationBody(id: notificationId, factId: factId, categoryId: categoryId, title: title, subtitle: categoryName, body: body, inSeconds: intervalInSeconds, repeats: false)
         
         ScheduleNotification.set(notification: notification, completion: { success in
             if success {

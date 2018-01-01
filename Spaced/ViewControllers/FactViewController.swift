@@ -61,7 +61,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
         if (checkQuestion()) {
             let new = ScheduleNotification.correctAnswer(t: oldInterval)
             // update FB with new type
-            ScheduleNotification.send(factId: taskId, categoryId: categoryId, question: question, intervalStep: new)
+            ScheduleNotification.send(factId: taskId, categoryId: categoryId, categoryName: "{CategoryName}", question: question, intervalStep: new)
             
             let alert = UIAlertController(title: "Awsome", message: "Perfect!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
@@ -71,7 +71,7 @@ class FactViewController: UIViewController, UITextFieldDelegate {
         } else {
             let new = ScheduleNotification.wrongAnswer(t: oldInterval)
             // update FB with new type
-            ScheduleNotification.send(factId: taskId, categoryId: categoryId, question: question, intervalStep: new)
+            ScheduleNotification.send(factId: taskId, categoryId: categoryId, categoryName: "{CategoryName}", question: question, intervalStep: new)
 
             let alert = UIAlertController(title: "Ops", message: "The correct answer is: \(String(describing: correctAnswer))", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in

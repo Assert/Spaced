@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F2F6FE68E158BD50749C656 /* Pods_Spaced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DA992B0441E534CE85605 /* Pods_Spaced.framework */; };
-		454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */; };
 		457349241FF6E3E200E260DE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457349231FF6E3E200E260DE /* CustomButton.swift */; };
+		4573492A1FFAB0FE00E260DE /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457349291FFAB0FE00E260DE /* NewCategoryViewController.swift */; };
 		457AC6731FF40CBC00C086A5 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6721FF40CBC00C086A5 /* FactViewController.swift */; };
 		457AC6751FF4120100C086A5 /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6741FF4120100C086A5 /* AsyncResult.swift */; };
 		457AC6781FF4468600C086A5 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457AC6771FF4468600C086A5 /* ScheduleNotification.swift */; };
@@ -50,9 +50,9 @@
 /* Begin PBXFileReference section */
 		18315827A8084FCD35D8EAE4 /* Pods-Spaced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spaced/Pods-Spaced.release.xcconfig"; sourceTree = "<group>"; };
 		3998B3246DF7838E807D6F56 /* Pods-SpacedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpacedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpacedUITests/Pods-SpacedUITests.release.xcconfig"; sourceTree = "<group>"; };
-		454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputTableViewCell.swift; sourceTree = "<group>"; };
 		457349231FF6E3E200E260DE /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		457349281FF7CD8E00E260DE /* Spaced.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spaced.entitlements; sourceTree = "<group>"; };
+		457349291FFAB0FE00E260DE /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewCategoryViewController.swift; path = Spaced/ViewControllers/NewCategoryViewController.swift; sourceTree = SOURCE_ROOT; };
 		457AC6721FF40CBC00C086A5 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		457AC6741FF4120100C086A5 /* AsyncResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncResult.swift; sourceTree = "<group>"; };
 		457AC6771FF4468600C086A5 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
@@ -113,14 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		454D18071FF1960D00C8A651 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				454D18051FF1960400C8A651 /* CategoryInputTableViewCell.swift */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 		457349251FF6E3EB00E260DE /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,9 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				457349251FF6E3EB00E260DE /* Style */,
-				454D18071FF1960D00C8A651 /* Category */,
 				45C4D3CA1FED9F5D00ED9BA8 /* HomeViewController.swift */,
 				45D925111FF0FB1600DFC17A /* CategoriesViewController.swift */,
+				457349291FFAB0FE00E260DE /* NewCategoryViewController.swift */,
 				458598951FEDB07B00C26A95 /* FactsViewController.swift */,
 				457AC6721FF40CBC00C086A5 /* FactViewController.swift */,
 				45F63AC01FEEB5C900AB1ECB /* NewFactViewController.swift */,
@@ -548,7 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				457AC6731FF40CBC00C086A5 /* FactViewController.swift in Sources */,
-				454D18061FF1960400C8A651 /* CategoryInputTableViewCell.swift in Sources */,
+				4573492A1FFAB0FE00E260DE /* NewCategoryViewController.swift in Sources */,
 				45C4D3CB1FED9F5D00ED9BA8 /* HomeViewController.swift in Sources */,
 				457AC6751FF4120100C086A5 /* AsyncResult.swift in Sources */,
 				457AC6781FF4468600C086A5 /* ScheduleNotification.swift in Sources */,

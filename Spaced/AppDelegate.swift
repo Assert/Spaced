@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print("\(subtitle) - \(categoryId) - \(factId) ")
             // Re-schedule since app is open
             let shortInterval = 0
-            ScheduleNotification.send(factId: factId, categoryId: categoryId, question: subtitle, intervalStep: shortInterval)
+            ScheduleNotification.send(factId: factId, categoryId: categoryId, categoryName: "{CategoryName}", question: subtitle, intervalStep: shortInterval)
         }
         completionHandler([.badge, .alert, .sound]) // Remove this line?
     }

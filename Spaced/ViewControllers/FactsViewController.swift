@@ -34,6 +34,7 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     public func loadTasks(categoryId: String) {
         taskNameList = []
+        taskIdList = []
         Tasks.all(categoryId: categoryId, completion: { (tasks) in
             tasks?.forEach({ (task) in
                 self.taskIdList.append(task.id)
@@ -60,18 +61,28 @@ class FactsViewController: UIViewController, UITableViewDelegate, UITableViewDat
      }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskNameList.count
+        return taskNameList.count + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = taskNameList[indexPath.row]
-        cell.accessoryType = .disclosureIndicator
-        return cell
+        if ( indexPath.row == taskNameList.count) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "newFactCell", for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = taskNameList[indexPath.row]
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        }
     }
     
     public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        selectedTaskId = taskIdList[indexPath.row]
+        if (indexPath.row == taskNameList.count) {
+            selectedTaskId = nil
+        } else {
+            selectedTaskId = taskIdList[indexPath.row]
+        }
         return indexPath
+        
     }
 }

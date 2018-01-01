@@ -3,17 +3,16 @@
 ## Fix
 Category name in push
 Questions multi-line
-Remove "What is...?" On questions
 - Auto layout
+Save with blank name/question
+Save with duplicate name
 
 ## Features
 Home should be for non notification
     next questions
-Input I eget VC with a cancel
 Edit fact
      Move to new category
 Edit and delete
-New task from last line
 Input view modal with blur background
 Animate answer dialog
 - Settings

@@ -32,12 +32,13 @@ class NewFactViewController: UIViewController {
         FirestoreHelper().writeFact(categoryId: categoryId, question: question, answer: answer) { docId in
             guard let factId = docId else { return }
             
-            ScheduleNotification.send(factId: factId, categoryId: categoryId, question: question, intervalStep: 0)
+            ScheduleNotification.send(factId: factId, categoryId: categoryId, categoryName: "{CategoryName}", question: question, intervalStep: 0)
             
             Analytics.logEvent("fact_created", parameters: nil)
             
-            self.navigationController?.popViewController(animated: true)
         }
+        self.navigationController?.popViewController(animated: true)
+
     }
 
    
